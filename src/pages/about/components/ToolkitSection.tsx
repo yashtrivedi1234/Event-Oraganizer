@@ -18,8 +18,8 @@ const ToolkitSection: React.FC = () => {
                 rotateY: 15, 
                 rotateX: -10,
                 z: 50,
-                borderColor: '#f27d26',
-                boxShadow: "0 20px 40px rgba(242, 125, 38, 0.2)"
+                borderColor: '#88AB32',
+                boxShadow: "0 20px 40px rgba(136, 171, 50, 0.2)"
               }}
               transition={{ 
                 type: "spring", 

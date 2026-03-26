@@ -34,7 +34,7 @@ const FloatingParticles = ({ count = 1000 }) => {
       </bufferGeometry>
       <pointsMaterial
         size={0.02}
-        color="#f27d26"
+        color="#88AB32"
         transparent
         opacity={0.4}
         sizeAttenuation
@@ -49,7 +49,7 @@ const AbstractShapes = () => {
       <Float speed={1.2} rotationIntensity={0.5} floatIntensity={1}>
         <mesh position={[6, 3, -6]}>
           <torusKnotGeometry args={[1.2, 0.2, 128, 16]} />
-          <meshStandardMaterial color="#f27d26" wireframe opacity={0.08} transparent />
+          <meshStandardMaterial color="#88AB32" wireframe opacity={0.08} transparent />
         </mesh>
       </Float>
       
@@ -63,7 +63,7 @@ const AbstractShapes = () => {
       <Float speed={1.5} rotationIntensity={0.8} floatIntensity={1}>
         <mesh position={[-2, 6, -12]}>
           <icosahedronGeometry args={[2, 1]} />
-          <meshStandardMaterial color="#f27d26" wireframe opacity={0.02} transparent />
+          <meshStandardMaterial color="#88AB32" wireframe opacity={0.02} transparent />
         </mesh>
       </Float>
 
@@ -91,7 +91,7 @@ const Scene3D: React.FC = () => {
           autoRotate={false}
         />
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1.8} color="#f27d26" />
+        <pointLight position={[10, 10, 10]} intensity={1.8} color="#88AB32" />
         <pointLight position={[-10, -10, -10]} intensity={1.0} color="#ffffff" />
         
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />

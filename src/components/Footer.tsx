@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                 key={i}
                 href={social.href}
                 aria-label={social.label}
-                whileHover={{ scale: 1.2, rotateY: 20, z: 20, color: '#f27d26' }}
+                whileHover={{ scale: 1.2, rotateY: 20, z: 20, color: '#88AB32' }}
                 className="text-white/50 transition-colors"
                 style={{ transformStyle: 'preserve-3d' }}
               >
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
 
       {/* CodeCrafter credit */}
       <div className="max-w-7xl mx-auto mt-6 flex justify-center">
-        <div className="inline-flex items-center gap-3 rounded-full border border-accent/40 bg-accent/10 px-4 py-2 shadow-[0_0_20px_rgba(242,125,38,0.15)]">
+        <div className="inline-flex items-center gap-3 rounded-full border border-accent/40 bg-accent/10 px-4 py-2 shadow-[0_0_20px_rgba(136,171,50,0.15)]">
           <span className="text-xs text-white/80 uppercase tracking-widest">
           Designed &amp; Developed by
           </span>
