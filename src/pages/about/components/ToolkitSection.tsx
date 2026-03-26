@@ -5,7 +5,7 @@ const ToolkitSection: React.FC = () => {
   return (
     <section className="py-32 px-6 md:px-12 bg-black/20 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-20 text-center">Our Toolkit</h2>
+        <h2 className="h2 font-display font-bold uppercase tracking-tighter mb-20 text-center">Our Toolkit</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 perspective-1000">
           {['Creative Direction', 'Logistics Management', 'Technical Production', 'Vendor Curation', 'Spatial Design', 'Guest Experience', 'Brand Integration', 'Budget Strategy'].map((skill, i) => (
             <motion.div 

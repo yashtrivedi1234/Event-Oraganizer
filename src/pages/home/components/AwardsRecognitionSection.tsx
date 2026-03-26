@@ -7,7 +7,7 @@ const AwardsRecognitionSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
           <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">Recognition</span>
-          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter">AWARDS & <br /> <span className="text-white/20 outline-text">ACCOLADES</span></h2>
+          <h2 className="h2 font-display font-bold uppercase tracking-tighter">AWARDS & <span className="text-white/20 outline-text">ACCOLADES</span></h2>
           <p className="text-muted mt-12 max-w-2xl mx-auto text-lg">Our commitment to excellence has been recognized by leading industry organizations and publications worldwide.</p>
         </div>
 

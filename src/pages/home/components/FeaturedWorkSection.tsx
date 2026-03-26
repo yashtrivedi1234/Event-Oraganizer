@@ -8,8 +8,8 @@ const FeaturedWorkSection: React.FC = () => {
     <section className="py-32 px-6 md:px-12" data-scroll-section>
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-end mb-20">
-          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter">
-            FEATURED <br /> PRODUCTIONS
+          <h2 className="h2 font-display font-bold uppercase tracking-tighter">
+            FEATURED PRODUCTIONS
           </h2>
           <Link to="/portfolio" className="text-accent font-bold uppercase tracking-widest border-b border-accent pb-2">View All</Link>
         </div>
@@ -38,7 +38,7 @@ const FeaturedWorkSection: React.FC = () => {
                 </div>
               </div>
               <span className="text-accent font-mono text-xs uppercase tracking-widest mb-2 block">{work.category}</span>
-              <h3 className="text-3xl font-display font-bold uppercase">{work.title}</h3>
+              <h3 className="h3 font-display font-bold uppercase">{work.title}</h3>
             </motion.div>
           ))}
         </div>

@@ -4,16 +4,13 @@ const ServicesSection: React.FC = () => {
   return (
     <section className="py-32 px-6 md:px-12 bg-white text-black" data-scroll-section>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-end mb-20">
+        <div className="grid grid-cols-1 gap-20 mb-20">
           <div>
             <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">Our Expertise</span>
-            <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter">
-              THE ART OF <br /> CELEBRATION
+            <h2 className="h2 font-display font-bold uppercase tracking-tighter">
+              THE ART OF CELEBRATION
             </h2>
           </div>
-          <p className="text-xl text-black/60 leading-relaxed max-w-md">
-            From intimate galas to large-scale corporate productions, we bring vision to life with precision and flair.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-1">
@@ -26,8 +23,8 @@ const ServicesSection: React.FC = () => {
             { title: 'Brand Activations', desc: 'Creative experiential marketing that connects brands with their audience.' }
           ].map((service, i) => (
             <div key={i} className="p-12 border border-black/10 hover:bg-accent hover:text-black transition-all duration-500 group">
-              <span className="text-4xl font-display font-bold mb-8 block opacity-20 group-hover:opacity-100">0{i+1}</span>
-              <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{service.title}</h3>
+              <span className="h3 font-display font-bold mb-8 block opacity-20 group-hover:opacity-100">0{i+1}</span>
+              <h3 className="h3 font-bold mb-4 uppercase tracking-tight">{service.title}</h3>
               <p className="opacity-60 group-hover:opacity-80">{service.desc}</p>
             </div>
           ))}

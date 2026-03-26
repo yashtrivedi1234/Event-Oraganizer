@@ -16,7 +16,7 @@ const Gallery: React.FC = () => {
   return (
     <div className="pt-32 pb-20 px-6 md:px-12 bg-transparent">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-20">Gallery</h1>
+        <h1 className="h1 font-display font-bold uppercase tracking-tighter mb-20">Gallery</h1>
         
         <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 perspective-2000">
           {galleryImages.map((item, i) => (

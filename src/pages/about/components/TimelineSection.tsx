@@ -5,7 +5,7 @@ const TimelineSection: React.FC = () => {
   return (
     <section className="py-32 px-6 md:px-12 bg-white/90 backdrop-blur-md text-black">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-20">Our Milestones</h2>
+        <h2 className="h2 font-display font-bold uppercase tracking-tighter mb-20">Our Milestones</h2>
         <div className="space-y-20">
           {[
             { year: '2025', title: 'Global Expansion', company: 'International Galas', desc: 'Successfully produced our first multi-city European tour for a major tech brand.' },

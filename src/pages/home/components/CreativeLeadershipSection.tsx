@@ -7,7 +7,7 @@ const CreativeLeadershipSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
           <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">The Minds Behind</span>
-          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter">CREATIVE <br /> <span className="text-white/20 outline-text">LEADERSHIP</span></h2>
+          <h2 className="h2 font-display font-bold uppercase tracking-tighter">CREATIVE <span className="text-white/20 outline-text">LEADERSHIP</span></h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

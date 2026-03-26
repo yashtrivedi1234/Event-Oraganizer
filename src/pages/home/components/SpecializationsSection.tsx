@@ -7,7 +7,7 @@ const SpecializationsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-24">
           <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">Core Specializations</span>
-          <h2 className="text-5xl md:text-8xl font-display font-bold uppercase tracking-tighter">OUR SIGNATURE <br /> <span className="text-white/20 outline-text">EXPERIENCES</span></h2>
+          <h2 className="h2 font-display font-bold uppercase tracking-tighter">OUR SIGNATURE <span className="text-white/20 outline-text">EXPERIENCES</span></h2>
         </div>
 
         <div className="space-y-40">
@@ -68,7 +68,7 @@ const SpecializationsSection: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="w-full md:w-1/2"
               >
-                <h3 className="text-4xl md:text-6xl font-display font-bold uppercase mb-6">{spec.title}</h3>
+                <h3 className="h3 font-display font-bold uppercase mb-6">{spec.title}</h3>
                 <p className="text-xl text-muted leading-relaxed mb-8">{spec.desc}</p>
                 <div className="flex flex-wrap gap-3">
                   {spec.tags.map((tag, j) => (

@@ -6,7 +6,7 @@ const ProcessSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
           <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">How We Work</span>
-          <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter">OUR PROCESS</h2>
+          <h2 className="h2 font-display font-bold uppercase tracking-tighter">OUR PROCESS</h2>
         </div>
 
         <div className="relative">

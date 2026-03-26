@@ -6,8 +6,8 @@ const FinalCTASection: React.FC = () => {
   return (
     <section className="py-40 px-6 md:px-12 text-center relative overflow-hidden" data-scroll-section>
       <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="text-6xl md:text-9xl font-display font-bold uppercase tracking-tighter mb-12">
-          READY TO <br /> <span className="text-accent">CELEBRATE?</span>
+        <h2 className="h2 font-display font-bold uppercase tracking-tighter mb-12">
+          READY TO <span className="text-accent">CELEBRATE?</span>
         </h2>
         <Link 
           to="/contact"
@@ -16,7 +16,7 @@ const FinalCTASection: React.FC = () => {
           Start Planning <ArrowRight className="group-hover:translate-x-2 transition-transform" />
         </Link>
       </div>
-      
+
       {/* Background Text */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-display font-bold text-white/5 pointer-events-none select-none">
         Bamboo Groves

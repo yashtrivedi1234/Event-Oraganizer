@@ -10,7 +10,7 @@ const LatestInsightsSection: React.FC = () => {
         <div className="flex justify-between items-end mb-20">
           <div>
             <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">Journal</span>
-            <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter">LATEST <br /> INSIGHTS</h2>
+            <h2 className="h2 font-display font-bold uppercase tracking-tighter">LATEST INSIGHTS</h2>
           </div>
           <Link to="/journal" className="text-black font-bold uppercase tracking-widest border-b border-black pb-2">Read All</Link>
         </div>

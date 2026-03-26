@@ -11,11 +11,11 @@ const ClientsMarqueeSection: React.FC = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         >
           {['GOOGLE', 'APPLE', 'TESLA', 'NIKE', 'ROLEX', 'PRADA', 'NETFLIX', 'SPOTIFY'].map((client, i) => (
-            <span key={i} className="text-black/20 text-6xl md:text-8xl font-display font-bold tracking-tighter">{client}</span>
+            <span key={i} className="text-black/20 h1 font-display font-bold tracking-tighter">{client}</span>
           ))}
           {/* Duplicate for seamless loop */}
           {['GOOGLE', 'APPLE', 'TESLA', 'NIKE', 'ROLEX', 'PRADA', 'NETFLIX', 'SPOTIFY'].map((client, i) => (
-            <span key={i+'_dup'} className="text-black/20 text-6xl md:text-8xl font-display font-bold tracking-tighter">{client}</span>
+            <span key={i+'_dup'} className="text-black/20 h1 font-display font-bold tracking-tighter">{client}</span>
           ))}
         </motion.div>
       </div>

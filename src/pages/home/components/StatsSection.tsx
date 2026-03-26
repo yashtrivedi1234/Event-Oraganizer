@@ -21,7 +21,7 @@ const StatsSection: React.FC = () => {
             className="text-center"
           >
             <div className="text-accent mb-4 flex justify-center">{stat.icon}</div>
-            <h3 className="text-4xl md:text-5xl font-display font-bold mb-2">{stat.value}</h3>
+            <h3 className="h3 font-display font-bold mb-2">{stat.value}</h3>
             <p className="text-muted text-xs uppercase tracking-widest">{stat.label}</p>
           </motion.div>
         ))}

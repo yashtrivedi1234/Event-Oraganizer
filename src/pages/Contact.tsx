@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           {/* Info */}
           <div>
-            <h1 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-12">Start Your <br /> <span className="text-accent">Event.</span></h1>
+            <h1 className="h1 font-display font-bold uppercase tracking-tighter mb-12">Start Your <br /> <span className="text-accent">Event.</span></h1>
             <p className="text-xl text-muted leading-relaxed mb-12 max-w-md">
               Ready to create something extraordinary? Tell us about your event and let's start the planning process.
             </p>

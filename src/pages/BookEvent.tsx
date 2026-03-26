@@ -176,7 +176,7 @@ const BookEvent: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <h1 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-6">
+          <h1 className="h1 font-display font-bold uppercase tracking-tighter mb-6">
             Book Your <br /> <span className="text-accent">Perfect Event</span>
           </h1>
           <p className="text-xl text-muted leading-relaxed max-w-2xl">
@@ -188,7 +188,7 @@ const BookEvent: React.FC = () => {
           {/* Benefits Column */}
           <div className="lg:col-span-1">
             <div className="sticky top-32">
-              <h3 className="text-2xl font-display font-bold mb-8 uppercase tracking-tighter">Why Choose Us</h3>
+              <h3 className="h3 font-display font-bold mb-8 uppercase tracking-tighter">Why Choose Us</h3>
               <div className="space-y-6">
                 {[
                   { icon: <Package size={32} />, title: 'Full Service',         desc: 'End-to-end event management' },
@@ -255,7 +255,7 @@ const BookEvent: React.FC = () => {
                 >
                   <CheckCircle2 size={80} />
                 </motion.div>
-                <h3 className="text-3xl font-display font-bold mb-4">Thank You!</h3>
+                <h3 className="h3 font-display font-bold mb-4">Thank You!</h3>
                 <p className="text-muted text-lg mb-2">Your booking request has been received.</p>
                 <p className="text-accent font-semibold">We'll contact you within 24 hours.</p>
               </motion.div>

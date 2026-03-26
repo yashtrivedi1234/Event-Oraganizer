@@ -82,7 +82,7 @@ const TermsOfService: React.FC = () => {
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-7xl font-display font-bold uppercase leading-[0.9] tracking-tighter mb-8"
+            className="h1 font-display font-bold uppercase leading-[0.9] tracking-tighter mb-8"
           >
             Terms of <span className="text-accent">Service</span>
           </motion.h1>

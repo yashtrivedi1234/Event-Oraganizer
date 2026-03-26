@@ -41,7 +41,7 @@ const VisionSection: React.FC = () => {
           transition={{ duration: 1 }}
         >
           <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-8 block">Our Philosophy</span>
-          <h2 className="text-4xl md:text-7xl font-display font-bold uppercase tracking-tighter leading-[1.1] mb-12">
+          <h2 className="h2 font-display font-bold uppercase tracking-tighter leading-[1.1] mb-12">
             WE DON'T JUST PLAN EVENTS. <br />
             <span className="text-white/20 outline-text">WE DESIGN LEGACIES.</span>
           </h2>

@@ -21,7 +21,7 @@ const Portfolio: React.FC = () => {
     <div className="pt-32 pb-20 px-6 md:px-12 bg-transparent">
       <div className="max-w-7xl mx-auto">
         <header className="mb-20">
-          <h1 className="text-6xl md:text-8xl font-display font-bold uppercase tracking-tighter mb-8">Productions</h1>
+          <h1 className="h1 font-display font-bold uppercase tracking-tighter mb-8">Productions</h1>
           <div className="flex flex-wrap gap-4">
             {['All', 'Corporate', 'Private'].map((cat) => (
               <button
@@ -74,7 +74,7 @@ const Portfolio: React.FC = () => {
                 </div>
                 <div className="px-2 pb-4" style={{ transform: "translateZ(30px)" }}>
                   <span className="text-accent font-mono text-xs uppercase tracking-widest mb-2 block">{project.category}</span>
-                  <h3 className="text-2xl font-display font-bold uppercase">{project.title}</h3>
+                  <h3 className="h3 font-display font-bold uppercase">{project.title}</h3>
                 </div>
               </motion.div>
             ))}
