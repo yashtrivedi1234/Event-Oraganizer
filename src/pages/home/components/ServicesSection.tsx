@@ -25,7 +25,7 @@ const ServicesSection: React.FC = () => {
             { title: 'Immersive Tech', desc: 'Integrating AR, VR, and interactive installations into live environments.' },
             { title: 'Brand Activations', desc: 'Creative experiential marketing that connects brands with their audience.' }
           ].map((service, i) => (
-            <div key={i} className="p-12 border border-black/10 hover:bg-black hover:text-white transition-all duration-500 group">
+            <div key={i} className="p-12 border border-black/10 hover:bg-accent hover:text-black transition-all duration-500 group">
               <span className="text-4xl font-display font-bold mb-8 block opacity-20 group-hover:opacity-100">0{i+1}</span>
               <h3 className="text-2xl font-bold mb-4 uppercase tracking-tight">{service.title}</h3>
               <p className="opacity-60 group-hover:opacity-80">{service.desc}</p>

@@ -46,7 +46,7 @@ html.has-scroll-dragging {
 
 @layer utilities {
   .outline-text {
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+    -webkit-text-stroke: 1px var(--color-accent);
     color: transparent;
   }
   
