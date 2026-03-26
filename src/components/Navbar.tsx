@@ -96,7 +96,7 @@ const Navbar: React.FC = () => {
 
             <motion.div whileHover={{ scale: 1.05, rotateY: 10, z: 20 }}>
               <Link
-                to="/contact"
+                to="/book-event"
                 className="bg-accent text-white px-4 py-2 lg:px-6 lg:py-2 rounded-full text-xs lg:text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all block shadow-lg whitespace-nowrap"
               >
                 Book Event
@@ -173,7 +173,7 @@ const Navbar: React.FC = () => {
                 className="mt-2"
               >
                 <Link
-                  to="/contact"
+                  to="/book-event"
                   className="bg-accent text-white px-8 py-3 sm:px-10 sm:py-4 rounded-full text-base sm:text-lg font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all block"
                 >
                   Book Event

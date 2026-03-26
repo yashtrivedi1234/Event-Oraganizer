@@ -12,11 +12,12 @@ import ScrollToTop from './components/ScrollToTop';
 import Scene3D from './components/Scene3D';
 
 // Pages
-import Home from './pages/Home';
-import About from './pages/About';
+import Home from './pages/home/Home';
+import About from './pages/about/About';
 import Portfolio from './pages/Portfolio';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import BookEvent from './pages/BookEvent';
 
 const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
@@ -71,6 +72,7 @@ export default function App() {
             <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
             <Route path="/portfolio" element={<PageWrapper><Portfolio /></PageWrapper>} />
             <Route path="/gallery" element={<PageWrapper><Gallery /></PageWrapper>} />
+            <Route path="/book-event" element={<PageWrapper><BookEvent /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
           </Routes>
         </>
