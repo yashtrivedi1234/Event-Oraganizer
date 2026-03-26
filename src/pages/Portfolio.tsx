@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import ContactModal from '../components/ContactModal';
 
 const projects = [
   { id: 1, title: 'The Crystal Gala', category: 'Corporate', img: 'https://picsum.photos/seed/gala1/800/600', desc: 'A high-end corporate gala for 500+ guests with immersive lighting.' },
@@ -12,6 +13,24 @@ const projects = [
 
 const Portfolio: React.FC = () => {
   const [filter, setFilter] = useState('All');
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+
+  useEffect(() => {
+    // Check if opened from QR code
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get('project');
+    
+    if (projectId) {
+      const project = projects.find(p => p.id === parseInt(projectId));
+      if (project) {
+        setSelectedProject(project);
+        setModalOpen(true);
+        // Clean URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    }
+  }, []);
 
   const filteredProjects = filter === 'All' 
     ? projects 
@@ -57,6 +76,10 @@ const Portfolio: React.FC = () => {
                   boxShadow: "0 25px 50px rgba(0,0,0,0.5)"
                 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
+                onClick={() => {
+                  setSelectedProject(project);
+                  setModalOpen(true);
+                }}
                 className="group cursor-pointer rounded-2xl overflow-hidden"
                 style={{ transformStyle: "preserve-3d" }}
               >
@@ -68,8 +91,15 @@ const Portfolio: React.FC = () => {
                     referrerPolicy="no-referrer"
                     style={{ transform: "translateZ(20px)" }}
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-8 text-center">
-                    <p className="text-white text-sm leading-relaxed" style={{ transform: "translateZ(40px)" }}>{project.desc}</p>
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-8 gap-6">
+                    <div className="w-32 h-32 bg-white p-2 rounded-lg">
+                      <img 
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=120&data=${encodeURIComponent(import.meta.env.VITE_APP_URL + `/portfolio?project=${project.id}`)}`}
+                        alt="QR Code"
+                        className="w-full h-full"
+                      />
+                    </div>
+                    <p className="text-white text-xs font-semibold uppercase tracking-widest">Scan to Connect</p>
                   </div>
                 </div>
                 <div className="px-2 pb-4" style={{ transform: "translateZ(30px)" }}>
@@ -80,6 +110,12 @@ const Portfolio: React.FC = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        <ContactModal
+          isOpen={modalOpen}
+          onClose={() => setModalOpen(false)}
+          projectTitle={selectedProject?.title || 'Our Project'}
+        />
       </div>
     </div>
   );
