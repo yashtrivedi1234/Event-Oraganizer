@@ -18,7 +18,7 @@ const Home: React.FC = () => {
             style={{ transformStyle: "preserve-3d" }}
           >
             <motion.span 
-              className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block"
+              className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block ml-9"
               style={{ transform: "translateZ(120px)" }}
             >
               Luxury Event Production Studio
