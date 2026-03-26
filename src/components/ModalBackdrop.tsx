@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { X } from 'lucide-react';
 
@@ -10,6 +10,27 @@ interface ModalBackdropProps {
 }
 
 const ModalBackdrop: React.FC<ModalBackdropProps> = ({ isOpen, onClose, children, title }) => {
+  useEffect(() => {
+    if (isOpen) {
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // Disable scroll
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      // Enable scroll
+      document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = 'unset';
+    }
+
+    return () => {
+      // Cleanup: enable scroll when component unmounts
+      document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
