@@ -273,7 +273,7 @@ const Home: React.FC = () => {
               <span className="text-white/20 outline-text">WE DESIGN LEGACIES.</span>
             </h2>
             <p className="text-xl md:text-2xl text-muted leading-relaxed max-w-3xl mx-auto font-light">
-              At Vanguard, we believe every celebration is an opportunity to tell a story that resonates across generations. Our approach blends architectural precision with cinematic emotion, ensuring your most important moments are etched in time.
+              At Bamboo Groves, we believe every celebration is an opportunity to tell a story that resonates across generations. Our approach blends architectural precision with cinematic emotion, ensuring your most important moments are etched in time.
             </p>
           </motion.div>
         </div>
@@ -382,7 +382,7 @@ const Home: React.FC = () => {
         <div className="max-w-4xl mx-auto text-center">
           <Star className="mx-auto mb-8 opacity-50" size={48} />
           <h2 className="text-3xl md:text-5xl font-serif italic leading-tight mb-12">
-            "Vanguard Events exceeded every expectation. Their ability to handle complex logistics while maintaining a high level of creative flair is truly impressive."
+            "Bamboo Groves Events exceeded every expectation. Their ability to handle complex logistics while maintaining a high level of creative flair is truly impressive."
           </h2>
           <div>
             <p className="font-bold uppercase tracking-widest">Michael Chen</p>
@@ -492,7 +492,7 @@ const Home: React.FC = () => {
         
         {/* Background Text */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30vw] font-display font-bold text-white/5 pointer-events-none select-none">
-          VANGUARD
+          Bamboo Groves
         </div>
       </section>
     </div>

@@ -29,7 +29,7 @@ const About: React.FC = () => {
                 "We don't just plan events; we design atmospheres that resonate and memories that endure."
               </p>
               <p className="text-lg text-muted leading-relaxed">
-                Vanguard Events was founded on the belief that every gathering is an opportunity for storytelling. With a background in theater production and luxury hospitality, our team brings a unique theatricality and precision to every project.
+                Bamboo Groves Events was founded on the belief that every gathering is an opportunity for storytelling. With a background in theater production and luxury hospitality, our team brings a unique theatricality and precision to every project.
               </p>
               <div className="grid grid-cols-2 gap-8 pt-8">
                 <div>
@@ -54,7 +54,7 @@ const About: React.FC = () => {
             {[
               { year: '2025', title: 'Global Expansion', company: 'International Galas', desc: 'Successfully produced our first multi-city European tour for a major tech brand.' },
               { year: '2022', title: 'Award for Innovation', company: 'Event Excellence Awards', desc: 'Recognized for our pioneering use of immersive AR in live event spaces.' },
-              { year: '2019', title: 'The Beginning', company: 'Vanguard Launch', desc: 'Started as a boutique agency focusing on high-end private celebrations in LA.' }
+              { year: '2019', title: 'The Beginning', company: 'Bamboo Groves Launch', desc: 'Started as a boutique agency focusing on high-end private celebrations in LA.' }
             ].map((item, i) => (
               <motion.div 
                 key={i} 

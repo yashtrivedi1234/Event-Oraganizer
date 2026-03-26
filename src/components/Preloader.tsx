@@ -16,7 +16,7 @@ const Preloader: React.FC = () => {
           animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
-          Vanguard
+          Bamboo Groves
         </motion.h1>
       </div>
       <motion.div
