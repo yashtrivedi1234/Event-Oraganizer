@@ -106,12 +106,12 @@ const Footer: React.FC = () => {
           © 2026 Bamboo Groves Events Group. All Rights Reserved.
         </p>
         <div className="flex space-x-6">
-          <a href="#" className="hover:text-white transition-colors whitespace-nowrap">
+          <Link to="/privacy-policy" className="hover:text-white transition-colors whitespace-nowrap">
             Privacy Policy
-          </a>
-          <a href="#" className="hover:text-white transition-colors whitespace-nowrap">
+          </Link>
+          <Link to="/terms-of-service" className="hover:text-white transition-colors whitespace-nowrap">
             Terms of Service
-          </a>
+          </Link>
         </div>
       </div>
 

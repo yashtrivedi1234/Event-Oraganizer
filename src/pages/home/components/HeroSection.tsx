@@ -9,15 +9,10 @@ const HeroSection: React.FC = () => {
         <motion.div
           initial={{ opacity: 0, y: 50, rotateX: 20 }}
           animate={{ opacity: 1, y: 0, rotateX: 0 }}
-          transition={{ duration: 1.2, delay: 2, ease: "easeOut" }}
+          transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
           style={{ transformStyle: "preserve-3d" }}
         >
-          <motion.span 
-            className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block ml-9"
-            style={{ transform: "translateZ(120px)" }}
-          >
-            Luxury Event Production Studio
-          </motion.span>
+          
           <h1 className="text-[12vw] md:text-[8vw] leading-[0.9] font-display font-bold uppercase tracking-tighter mb-8">
             <motion.span style={{ display: "inline-block", transform: "translateZ(240px)" }}>CRAFTING</motion.span> <br />
             <motion.span 

@@ -18,6 +18,8 @@ import Portfolio from './pages/Portfolio';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import BookEvent from './pages/BookEvent';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
@@ -74,6 +76,8 @@ export default function App() {
             <Route path="/gallery" element={<PageWrapper><Gallery /></PageWrapper>} />
             <Route path="/book-event" element={<PageWrapper><BookEvent /></PageWrapper>} />
             <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+            <Route path="/privacy-policy" element={<PageWrapper><PrivacyPolicy /></PageWrapper>} />
+            <Route path="/terms-of-service" element={<PageWrapper><TermsOfService /></PageWrapper>} />
           </Routes>
         </>
       )}
