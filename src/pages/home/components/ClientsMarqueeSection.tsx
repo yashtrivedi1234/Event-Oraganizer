@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 const ClientsMarqueeSection: React.FC = () => {
   return (
-    <section className="py-20 bg-white overflow-hidden" data-scroll-section>
+    <section className=" bg-white overflow-hidden" data-scroll-section>
       <div className="flex whitespace-nowrap">
         <motion.div 
           className="flex space-x-20 items-center px-10"
