@@ -122,7 +122,7 @@ const Footer: React.FC = () => {
           Designed &amp; Developed by
           </span>
           <a
-            href="https://codecrafter.in"
+            href="https://www.codecrafter.co.in"
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-90 hover:opacity-100 transition-all duration-300 hover:scale-105"
