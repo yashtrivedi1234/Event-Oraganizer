@@ -29,12 +29,14 @@ const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         animate={{ opacity: 1, rotateY: 0, scale: 1, z: 0 }}
         exit={{ opacity: 0, rotateY: -10, scale: 0.95, z: -100 }}
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        className="perspective-2000"
+        className="perspective-2000 pointer-events-none"
         style={{ transformStyle: "preserve-3d" }}
       >
         <SmoothScroll>
-          {children}
-          <Footer />
+          <div className="pointer-events-auto">
+            {children}
+            <Footer />
+          </div>
         </SmoothScroll>
       </motion.div>
     </AnimatePresence>

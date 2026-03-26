@@ -19,24 +19,24 @@ const Home: React.FC = () => {
           >
             <motion.span 
               className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block"
-              style={{ transform: "translateZ(80px)" }}
+              style={{ transform: "translateZ(120px)" }}
             >
               Luxury Event Production Studio
             </motion.span>
             <h1 className="text-[12vw] md:text-[8vw] leading-[0.9] font-display font-bold uppercase tracking-tighter mb-8">
-              <motion.span style={{ display: "inline-block", transform: "translateZ(160px)" }}>CRAFTING</motion.span> <br />
+              <motion.span style={{ display: "inline-block", transform: "translateZ(240px)" }}>CRAFTING</motion.span> <br />
               <motion.span 
                 className="text-white/20 outline-text inline-block" 
-                style={{ transform: "translateZ(120px)" }}
+                style={{ transform: "translateZ(180px)" }}
               >
                 UNFORGETTABLE
               </motion.span> <br />
-              <motion.span style={{ display: "inline-block", transform: "translateZ(240px)" }}>MOMENTS</motion.span>
+              <motion.span style={{ display: "inline-block", transform: "translateZ(320px)" }}>MOMENTS</motion.span>
             </h1>
             
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mt-12">
               <motion.button
-                whileHover={{ scale: 1.05, transform: "translateZ(60px)", rotateY: 8, rotateX: -5 }}
+                whileHover={{ scale: 1.05, transform: "translateZ(100px)", rotateY: 8, rotateX: -5 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-black px-10 py-5 rounded-full font-bold uppercase tracking-widest flex items-center gap-3 group shadow-[0_30px_60px_rgba(255,255,255,0.15)]"
               >
@@ -45,8 +45,8 @@ const Home: React.FC = () => {
               
               <motion.div 
                 className="flex items-center gap-4 cursor-pointer group"
-                style={{ transform: "translateZ(40px)" }}
-                whileHover={{ transform: "translateZ(60px)" }}
+                style={{ transform: "translateZ(80px)" }}
+                whileHover={{ transform: "translateZ(120px)" }}
               >
                 <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:border-accent transition-colors">
                   <Play size={16} fill="white" className="group-hover:fill-accent transition-colors" />
@@ -229,6 +229,56 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Vision Section with Pulsing Background */}
+      <section className="py-48 px-6 md:px-12 relative overflow-hidden" data-scroll-section>
+        {/* Pulsing Background Elements */}
+        <div className="absolute inset-0 z-0">
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3],
+            }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+            className="absolute top-1/4 -left-1/4 w-[80vw] h-[80vw] rounded-full bg-accent/20 blur-[120px]"
+          />
+          <motion.div 
+            animate={{ 
+              scale: [1.2, 1, 1.2],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{ 
+              duration: 10, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 1
+            }}
+            className="absolute bottom-1/4 -right-1/4 w-[60vw] h-[60vw] rounded-full bg-white/5 blur-[100px]"
+          />
+        </div>
+
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-8 block">Our Philosophy</span>
+            <h2 className="text-4xl md:text-7xl font-display font-bold uppercase tracking-tighter leading-[1.1] mb-12">
+              WE DON'T JUST PLAN EVENTS. <br />
+              <span className="text-white/20 outline-text">WE DESIGN LEGACIES.</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-muted leading-relaxed max-w-3xl mx-auto font-light">
+              At Vanguard, we believe every celebration is an opportunity to tell a story that resonates across generations. Our approach blends architectural precision with cinematic emotion, ensuring your most important moments are etched in time.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Featured Work */}
       <section className="py-32 px-6 md:px-12" data-scroll-section>
         <div className="max-w-7xl mx-auto">
@@ -338,6 +388,91 @@ const Home: React.FC = () => {
             <p className="font-bold uppercase tracking-widest">Michael Chen</p>
             <p className="text-white/60 text-sm uppercase tracking-widest mt-1">Director of Events, Global Tech Corp</p>
           </div>
+        </div>
+      </section>
+
+      {/* Creative Leadership */}
+      <section className="py-32 px-6 md:px-12 bg-black" data-scroll-section>
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-20">
+            <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">The Minds Behind</span>
+            <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter">CREATIVE <br /> <span className="text-white/20 outline-text">LEADERSHIP</span></h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {[
+              { name: 'Julian Vance', role: 'Creative Director', img: 'https://picsum.photos/seed/leader1/600/800' },
+              { name: 'Elena Rossi', role: 'Head of Production', img: 'https://picsum.photos/seed/leader2/600/800' },
+              { name: 'Marcus Thorne', role: 'Technical Lead', img: 'https://picsum.photos/seed/leader3/600/800' }
+            ].map((member, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="group"
+              >
+                <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-6 grayscale hover:grayscale-0 transition-all duration-700">
+                  <img src={member.img} alt={member.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+                </div>
+                <h3 className="text-2xl font-bold uppercase tracking-widest mb-1">{member.name}</h3>
+                <p className="text-accent text-xs uppercase tracking-widest font-mono">{member.role}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Insights */}
+      <section className="py-32 px-6 md:px-12 bg-white text-black" data-scroll-section>
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-between items-end mb-20">
+            <div>
+              <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">Journal</span>
+              <h2 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter">LATEST <br /> INSIGHTS</h2>
+            </div>
+            <Link to="/journal" className="text-black font-bold uppercase tracking-widest border-b border-black pb-2">Read All</Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { date: 'MAR 15, 2026', title: 'The Future of Immersive Tech in Events', category: 'Technology' },
+              { date: 'FEB 28, 2026', title: 'Sustainable Luxury: A New Standard', category: 'Sustainability' },
+              { date: 'JAN 12, 2026', title: 'Designing for Emotional Resonance', category: 'Design' }
+            ].map((post, i) => (
+              <motion.div 
+                key={i}
+                whileHover={{ x: 10 }}
+                className="p-10 border border-black/10 hover:border-accent transition-colors cursor-pointer group"
+              >
+                <span className="text-accent font-mono text-xs uppercase tracking-widest mb-4 block">{post.category}</span>
+                <h3 className="text-2xl font-bold uppercase leading-tight mb-8 group-hover:text-accent transition-colors">{post.title}</h3>
+                <div className="flex justify-between items-center">
+                  <span className="text-black/40 text-xs font-mono">{post.date}</span>
+                  <ArrowRight size={16} className="text-black/20 group-hover:text-accent transition-colors" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="py-32 px-6 md:px-12 bg-black border-y border-white/10" data-scroll-section>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-8">STAY IN THE <br /> <span className="text-accent">LOOP</span></h2>
+          <p className="text-muted mb-12 max-w-xl mx-auto">Subscribe to receive exclusive insights into the world of luxury event production and early access to our signature showcases.</p>
+          <form className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
+            <input 
+              type="email" 
+              placeholder="YOUR EMAIL ADDRESS" 
+              className="flex-1 bg-white/5 border border-white/10 rounded-full px-8 py-4 text-white focus:outline-none focus:border-accent transition-colors font-mono text-sm"
+            />
+            <button className="bg-accent text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+              Subscribe
+            </button>
+          </form>
         </div>
       </section>
 

@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   return (
     <nav
       className={cn(
-        'fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12 md:py-6',
+        'fixed top-0 left-0 w-full z-50 transition-all duration-300 px-6 py-4 md:px-12 md:py-6 pointer-events-auto',
         scrolled ? 'bg-background/80 backdrop-blur-md py-4' : 'bg-transparent'
       )}
     >
