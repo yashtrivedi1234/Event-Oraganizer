@@ -27,9 +27,10 @@ const Home: React.FC = () => {
     <div className="w-full">
       <HeroSection />
       <AboutUsSection />
+       <GrowWithUsSection />
       <FeaturesSection />
       <OurPresenceSection />
-      <GrowWithUsSection />
+     
       <ExploreExperiencesSection />
       <HomeCTASection />
       <VisionSection />

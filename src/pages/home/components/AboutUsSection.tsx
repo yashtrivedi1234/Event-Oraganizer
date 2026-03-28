@@ -60,12 +60,7 @@ const AboutUsSection: React.FC = () => {
                 </div>
               </div>
 
-              <Link
-                to="/about"
-                className="inline-flex items-center rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-black transition-all duration-300 hover:bg-accent hover:text-black"
-              >
-                Learn More
-              </Link>
+             
             </motion.div>
           </div>
         </motion.div>

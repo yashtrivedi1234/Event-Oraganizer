@@ -56,7 +56,7 @@ const FeaturesSection: React.FC = () => {
           <h2 className="text-white">Event Planning Features</h2>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 md:gap-x-20 md:gap-y-8 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-20 md:gap-y-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
 
@@ -67,7 +67,7 @@ const FeaturesSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.25 }}
                 transition={{ duration: 0.4, delay: index * 0.06 }}
-                className="flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 text-center md:flex-row md:items-start md:gap-5 md:border-0 md:bg-transparent md:p-0 md:text-left"
+                className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-left md:gap-5 md:border-0 md:bg-transparent md:p-0"
               >
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-accent/35 bg-black shadow-[0_0_22px_rgba(136,171,50,0.28)] md:h-24 md:w-24">
                   <Icon
@@ -77,7 +77,7 @@ const FeaturesSection: React.FC = () => {
                   />
                 </div>
 
-                <div className="pt-1">
+                <div className="flex-1 pt-1">
                   <h4 className="mb-2 text-sm text-white md:mb-3 md:text-base">
                     {feature.title}
                   </h4>
