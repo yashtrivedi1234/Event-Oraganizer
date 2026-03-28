@@ -27,7 +27,7 @@ const ExploreExperiencesSection: React.FC = () => {
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.25 }}
         transition={{ duration: 0.9, delay: 0.15, ease: 'easeOut' }}
-        className="relative z-10 mx-auto mt-14 flex max-w-7xl justify-center md:mt-20"
+        className="relative z-10 mx-auto mt-6 flex max-w-7xl justify-center md:mt-10"
       >
         <div className="relative h-[320px] w-[320px] overflow-hidden rounded-full border border-white/10 shadow-[0_-40px_120px_rgba(255,255,255,0.05)] md:h-[560px] md:w-[560px]">
           <img
