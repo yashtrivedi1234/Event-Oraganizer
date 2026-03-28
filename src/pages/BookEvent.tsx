@@ -217,7 +217,7 @@ const BookEvent: React.FC = () => {
                 {[
                   { icon: <Mail size={18} />,  label: 'Email',  value: 'events@bamboo.com' },
                   { icon: <Phone size={18} />, label: 'Phone',  value: '+1 (555) 123-4567' },
-                  { icon: <MapPin size={18} />, label: 'Studio', value: 'New York, NY' },
+                  { icon: <MapPin size={18} />, label: 'Studio', value: 'Lucknow, Uttar Pradesh' },
                 ].map(({ icon, label, value }) => (
                   <div key={label} className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-accent">

@@ -54,7 +54,7 @@ const PrivacyPolicy: React.FC = () => {
     },
     {
       title: '10. Contact Us',
-      content: 'If you have questions about this Privacy Policy or our privacy practices, please contact us at: privacy@bamboogroves.com | +1 (310) 555-0123 | Bamboo Groves Events, Los Angeles, CA'
+      content: 'If you have questions about this Privacy Policy or our privacy practices, please contact us at: privacy@bamboogroves.com | +1 (310) 555-0123 | Bamboo Groves Events, Lucknow, Uttar Pradesh'
     }
   ];
 

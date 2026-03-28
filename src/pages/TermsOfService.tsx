@@ -70,7 +70,7 @@ const TermsOfService: React.FC = () => {
     },
     {
       title: '14. Contact Information',
-      content: 'If you have any questions about these Terms of Service, please contact us at: legal@bamboogroves.com | +1 (310) 555-0123 | Bamboo Groves Events, Los Angeles, CA'
+      content: 'If you have any questions about these Terms of Service, please contact us at: legal@bamboogroves.com | +1 (310) 555-0123 | Bamboo Groves Events, Lucknow, Uttar Pradesh'
     }
   ];
 

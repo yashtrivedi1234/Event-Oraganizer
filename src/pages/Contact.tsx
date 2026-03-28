@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
               {[
                 { icon: <Mail size={24} />,  label: 'Email',  value: 'events@bamboogroves.com' },
                 { icon: <Phone size={24} />, label: 'Phone',  value: '+1 (555) 123-4567' },
-                { icon: <MapPin size={24} />, label: 'Studio', value: 'New York, NY' },
+                { icon: <MapPin size={24} />, label: 'Studio', value: 'Lucknow, Uttar Pradesh' },
               ].map(({ icon, label, value }) => (
                 <div key={label} className="flex items-center gap-6">
                   <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-accent">
