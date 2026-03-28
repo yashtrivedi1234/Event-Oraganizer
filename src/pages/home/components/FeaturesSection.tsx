@@ -54,7 +54,7 @@ const FeaturesSection: React.FC = () => {
       <div className="mx-auto max-w-7xl">
 
         {/* h2 base styles handle karte hain: Montserrat, uppercase, weight, size */}
-        <div className="mb-2 text-center">
+        <div className="mb-6 text-center">
           <h2 className="text-white">
             Event Planning Features
           </h2>

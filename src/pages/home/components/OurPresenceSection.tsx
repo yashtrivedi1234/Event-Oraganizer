@@ -109,7 +109,7 @@ const OurPresenceSection: React.FC = () => {
     <section className="section-padding bg-black px-4 text-white md:px-8" data-scroll-section>
       <div className="mx-auto max-w-[1280px]">
 
-        <div className="mb-2 text-center">
+        <div className="mb-6 text-center">
           {/* h2 global base style: Montserrat, uppercase, 700 weight */}
           <h2 className="text-white">
             Our Presence
