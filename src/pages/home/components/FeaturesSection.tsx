@@ -50,10 +50,10 @@ const features = [
 
 const FeaturesSection: React.FC = () => {
   return (
-    <section className="bg-black px-4 py-20 text-white md:px-8 md:py-24" data-scroll-section>
+    <section className="section-padding bg-black px-4 text-white md:px-8" data-scroll-section>
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white md:text-6xl">
+          <h2 className="h2 text-white">
             Event Planning Features
           </h2>
         </div>
@@ -80,10 +80,10 @@ const FeaturesSection: React.FC = () => {
                 </div>
 
                 <div className="pt-1">
-                  <h3 className="mb-3 text-2xl font-semibold tracking-tight text-white">
+                  <h3 className="h4 mb-3 text-white">
                     {feature.title}
                   </h3>
-                  <p className="max-w-xl text-lg leading-9 text-white/88">
+                  <p className="p max-w-xl text-white/88">
                     {feature.description}
                   </p>
                 </div>

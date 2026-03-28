@@ -2,10 +2,10 @@ import React from 'react';
 
 const ProcessSection: React.FC = () => {
   return (
-    <section className="py-32 px-6 md:px-12 bg-black overflow-hidden" data-scroll-section>
+    <section className="section-padding overflow-hidden bg-black px-6 md:px-12" data-scroll-section>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-24">
-          <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">How We Work</span>
+          <span className="section-eyebrow">How We Work</span>
           <h2 className="h2 font-display font-bold uppercase tracking-tighter">OUR PROCESS</h2>
         </div>
 
@@ -22,8 +22,8 @@ const ProcessSection: React.FC = () => {
             ].map((item, i) => (
               <div key={i} className="bg-background border border-white/10 p-8 rounded-2xl hover:border-accent transition-colors">
                 <span className="text-accent font-display font-bold text-4xl mb-6 block">{item.step}</span>
-                <h3 className="text-xl font-bold uppercase mb-4 tracking-widest">{item.title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="h5 mb-4 uppercase tracking-widest">{item.title}</h3>
+                <p className="p text-sm text-muted">{item.desc}</p>
               </div>
             ))}
           </div>

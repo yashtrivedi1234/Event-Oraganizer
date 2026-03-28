@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
           {/* Info */}
           <div>
             <h1 className="h1 font-display font-bold uppercase tracking-tighter mb-12">Start Your <br /> <span className="text-accent">Event.</span></h1>
-            <p className="text-xl text-muted leading-relaxed mb-12 max-w-md">
+            <p className="text-muted leading-relaxed mb-12 max-w-md">
               Ready to create something extraordinary? Tell us about your event and let's start the planning process.
             </p>
             
@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-xs uppercase tracking-widest text-muted font-bold">Email</h4>
-                  <p className="text-lg">events@Bamboo Groves.com</p>
+                  <p>events@Bamboo Groves.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -30,7 +30,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-xs uppercase tracking-widest text-muted font-bold">Phone</h4>
-                  <p className="text-lg">+1 (555) 123-4567</p>
+                  <p>+1 (555) 123-4567</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-xs uppercase tracking-widest text-muted font-bold">Studio</h4>
-                  <p className="text-lg">New York, NY</p>
+                  <p>New York, NY</p>
                 </div>
               </div>
             </div>

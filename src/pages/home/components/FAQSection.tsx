@@ -6,10 +6,10 @@ const FAQSection: React.FC = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
   return (
-    <section className="py-32 px-6 md:px-12" data-scroll-section>
+    <section className="section-padding px-6 md:px-12" data-scroll-section>
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-20">
-          <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">Common Questions</span>
+          <span className="section-eyebrow">Common Questions</span>
           <h2 className="h2 font-display font-bold uppercase tracking-tighter">FAQ</h2>
         </div>
 

@@ -2,11 +2,11 @@ import React from 'react';
 
 const ServicesSection: React.FC = () => {
   return (
-    <section className="py-32 px-6 md:px-12 bg-white text-black" data-scroll-section>
+    <section className="section-padding bg-white px-6 text-black md:px-12" data-scroll-section>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 gap-20 mb-20">
           <div>
-            <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">Our Expertise</span>
+            <span className="section-eyebrow">Our Expertise</span>
             <h2 className="h2 font-display font-bold uppercase tracking-tighter">
               THE ART OF CELEBRATION
             </h2>
@@ -24,8 +24,8 @@ const ServicesSection: React.FC = () => {
           ].map((service, i) => (
             <div key={i} className="p-12 border border-black/10 hover:bg-accent hover:text-black transition-all duration-500 group">
               <span className="h3 font-display font-bold mb-8 block opacity-20 group-hover:opacity-100">0{i+1}</span>
-              <h3 className="h3 font-bold mb-4 uppercase tracking-tight">{service.title}</h3>
-              <p className="opacity-60 group-hover:opacity-80">{service.desc}</p>
+              <h3 className="h3 mb-4 font-bold uppercase tracking-tight">{service.title}</h3>
+              <p className="p opacity-60 group-hover:opacity-80">{service.desc}</p>
             </div>
           ))}
         </div>

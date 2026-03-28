@@ -3,10 +3,10 @@ import { motion } from 'motion/react';
 
 const CreativeLeadershipSection: React.FC = () => {
   return (
-    <section className="py-32 px-6 md:px-12 bg-black" data-scroll-section>
+    <section className="section-padding bg-black px-6 md:px-12" data-scroll-section>
       <div className="max-w-7xl mx-auto">
         <div className="mb-20">
-          <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">The Minds Behind</span>
+          <span className="section-eyebrow">The Minds Behind</span>
           <h2 className="h2 font-display font-bold uppercase tracking-tighter">CREATIVE <span className="text-white/20 outline-text">LEADERSHIP</span></h2>
         </div>
 
@@ -27,7 +27,7 @@ const CreativeLeadershipSection: React.FC = () => {
               <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-6 grayscale hover:grayscale-0 transition-all duration-700">
                 <img src={member.img} alt={member.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
               </div>
-              <h3 className="text-2xl font-bold uppercase tracking-widest mb-1">{member.name}</h3>
+              <h3 className="font-bold uppercase tracking-widest mb-1">{member.name}</h3>
               <p className="text-accent text-xs uppercase tracking-widest font-mono">{member.role}</p>
             </motion.div>
           ))}

@@ -24,7 +24,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
   return (
     <>
       <h2 className="h2 font-display font-bold mb-2 text-accent">Get in Touch</h2>
-      <p className="text-white/60 mb-8 text-sm">
+      <p className="text-white/60 mb-8">
         Interested in <span className="text-accent font-semibold">{projectTitle}</span>? Share your details and we'll connect with you!
       </p>
 

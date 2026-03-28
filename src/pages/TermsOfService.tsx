@@ -86,7 +86,7 @@ const TermsOfService: React.FC = () => {
           >
             Terms of <span className="text-accent">Service</span>
           </motion.h1>
-          <p className="text-lg text-muted leading-relaxed">
+          <p className="text-muted leading-relaxed">
             Last Updated: March 26, 2026
           </p>
         </div>
@@ -103,18 +103,18 @@ const TermsOfService: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
             >
-              <h2 className="text-3xl font-bold uppercase tracking-widest mb-6">{section.title}</h2>
+              <h2 className="font-bold uppercase tracking-widest mb-6">{section.title}</h2>
               
               {section.content && (
-                <p className="text-lg text-muted leading-relaxed mb-6">{section.content}</p>
+                <p className="text-muted leading-relaxed mb-6">{section.content}</p>
               )}
 
               {section.subsections && (
                 <div className="space-y-6">
                   {section.subsections.map((subsection, j) => (
                     <div key={j}>
-                      <h3 className="text-xl font-bold text-accent mb-3">{subsection.subtitle}</h3>
-                      <p className="text-lg text-muted leading-relaxed">{subsection.text}</p>
+                      <h3 className="font-bold text-accent mb-3">{subsection.subtitle}</h3>
+                      <p className="text-muted leading-relaxed">{subsection.text}</p>
                     </div>
                   ))}
                 </div>

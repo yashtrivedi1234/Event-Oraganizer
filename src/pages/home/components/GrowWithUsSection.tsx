@@ -27,10 +27,10 @@ const items = [
 
 const GrowWithUsSection: React.FC = () => {
   return (
-    <section className="bg-[#02040b] px-6 py-20 text-white md:px-10 md:py-24" data-scroll-section>
+    <section className="section-padding bg-[#02040b] px-6 text-white md:px-10" data-scroll-section>
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 text-center">
-          <h2 className="font-sans text-4xl font-light tracking-tight text-white md:text-6xl">
+          <h2 className="h2 text-white">
             Grow With Us
           </h2>
         </div>
@@ -48,13 +48,13 @@ const GrowWithUsSection: React.FC = () => {
                 transition={{ duration: 0.35, delay: index * 0.06 }}
                 className="flex flex-col items-center text-center"
               >
-                <div className="mb-5 flex h-24 w-24 items-center justify-center text-white/90">
+                <div className="mb-5 flex h-24 w-24 items-center justify-center text-accent drop-shadow-[0_0_10px_rgba(136,171,50,0.45)]">
                   <Icon size={68} strokeWidth={1.5} />
                 </div>
-                <h3 className="mb-3 font-sans text-3xl font-normal tracking-tight text-white">
+                <h3 className="h3 mb-3 text-white">
                   {item.title}
                 </h3>
-                <p className="max-w-[260px] text-lg leading-9 text-white/90">
+                <p className="p max-w-[260px] text-white/90">
                   {item.description}
                 </p>
               </motion.div>

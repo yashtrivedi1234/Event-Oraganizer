@@ -179,7 +179,7 @@ const BookEvent: React.FC = () => {
           <h1 className="h1 font-display font-bold uppercase tracking-tighter mb-6">
             Book Your <br /> <span className="text-accent">Perfect Event</span>
           </h1>
-          <p className="text-xl text-muted leading-relaxed max-w-2xl">
+          <p className="text-muted leading-relaxed max-w-2xl">
             Let's bring your vision to life. Fill out the form below and our team will get back to you within 24 hours with a customized proposal.
           </p>
         </motion.div>
@@ -206,8 +206,8 @@ const BookEvent: React.FC = () => {
                   >
                     <div className="text-accent flex-shrink-0 mt-1">{benefit.icon}</div>
                     <div>
-                      <h4 className="font-bold text-lg mb-1">{benefit.title}</h4>
-                      <p className="text-muted text-sm">{benefit.desc}</p>
+                      <h4 className="font-bold mb-1">{benefit.title}</h4>
+                      <p className="text-muted">{benefit.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -256,7 +256,7 @@ const BookEvent: React.FC = () => {
                   <CheckCircle2 size={80} />
                 </motion.div>
                 <h3 className="h3 font-display font-bold mb-4">Thank You!</h3>
-                <p className="text-muted text-lg mb-2">Your booking request has been received.</p>
+                <p className="text-muted mb-2">Your booking request has been received.</p>
                 <p className="text-accent font-semibold">We'll contact you within 24 hours.</p>
               </motion.div>
             ) : (

@@ -4,7 +4,7 @@ import { Calendar, Users, Globe, Award } from 'lucide-react';
 
 const StatsSection: React.FC = () => {
   return (
-    <section className="py-20 px-6 md:px-12 border-y border-white/10 bg-black/40 backdrop-blur-sm" data-scroll-section>
+    <section className="section-padding border-y border-white/10 bg-black/40 px-6 backdrop-blur-sm md:px-12" data-scroll-section>
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
         {[
           { icon: <Calendar size={32} />, value: '500+', label: 'Events Produced' },

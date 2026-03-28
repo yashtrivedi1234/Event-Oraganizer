@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 const TimelineSection: React.FC = () => {
   return (
-    <section className="py-32 px-6 md:px-12 bg-white/90 backdrop-blur-md text-black">
+    <section className="section-padding bg-white/90 px-6 text-black backdrop-blur-md md:px-12">
       <div className="max-w-7xl mx-auto">
         <h2 className="h2 font-display font-bold uppercase tracking-tighter mb-20">Our Milestones</h2>
         <div className="space-y-20">
@@ -22,10 +22,10 @@ const TimelineSection: React.FC = () => {
             >
               <span className="text-accent font-mono font-bold">{item.year}</span>
               <div className="col-span-2">
-                <h3 className="text-3xl font-bold uppercase mb-2">{item.title}</h3>
-                <p className="text-black/60">{item.company}</p>
+                <h3 className="font-bold uppercase mb-2">{item.title}</h3>
+                <p className="p text-black/60">{item.company}</p>
               </div>
-              <p className="text-black/80">{item.desc}</p>
+              <p className="p text-black/80">{item.desc}</p>
             </motion.div>
           ))}
         </div>

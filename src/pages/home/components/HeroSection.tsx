@@ -79,7 +79,7 @@ export const HeroSection: React.FC = () => {
           className="text-center"
         >
           <span className="text-accent-green text-[10px] font-bold tracking-[1em] uppercase block mb-1">Bamboo</span>
-          <h1 className="text-white text-xl font-black tracking-tighter uppercase">Groves</h1>
+          <h1 className="text-white font-black tracking-tighter uppercase">Groves</h1>
         </motion.div>
       </div>
 
@@ -107,10 +107,10 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             >
               <span className="text-accent-green text-[10px] font-bold tracking-[0.5em] uppercase mb-4 block">01 / CORPORATE</span>
-              <h2 className="text-4xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-white mb-4 leading-none">
+              <h2 className="font-black uppercase tracking-tighter text-white mb-4 leading-none">
                 THE <br /> <span className="text-accent-green italic">SUMMIT</span>
               </h2>
-              <p className="text-white/60 max-w-xs text-[10px] md:text-xs uppercase tracking-widest mb-8 leading-relaxed">
+              <p className="text-white/60 max-w-xs uppercase tracking-widest mb-8 leading-relaxed">
                 Architecting high-impact corporate environments that define industry standards.
               </p>
               <motion.button 
@@ -149,10 +149,10 @@ export const HeroSection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
               <span className="text-accent-green text-[10px] font-bold tracking-[0.5em] uppercase mb-4 block">02 / PRIVATE</span>
-              <h2 className="text-4xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter text-white mb-4 leading-none">
+              <h2 className="font-black uppercase tracking-tighter text-white mb-4 leading-none">
                 THE <br /> <span className="text-accent-green italic">SOIRÉE</span>
               </h2>
-              <p className="text-white/60 max-w-xs text-[10px] md:text-xs uppercase tracking-widest mb-8 leading-relaxed md:ml-auto">
+              <p className="text-white/60 max-w-xs uppercase tracking-widest mb-8 leading-relaxed md:ml-auto">
                 Curating intimate, luxury milestones that resonate with personal legacy.
               </p>
               <motion.button 

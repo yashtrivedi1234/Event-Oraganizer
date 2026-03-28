@@ -15,10 +15,10 @@ const ExploreExperiencesSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="font-sans text-[clamp(3rem,8vw,7rem)] font-extralight uppercase leading-[0.88] tracking-[0.24em] text-white"
+          className="h1 text-white tracking-[0.18em]"
         >
           Explore
-          <br />
+          
           Experiences
         </motion.h2>
       </div>

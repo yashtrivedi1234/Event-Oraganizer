@@ -106,13 +106,13 @@ const locations = [
 
 const OurPresenceSection: React.FC = () => {
   return (
-    <section className="bg-black px-4 py-20 text-white md:px-8 md:py-24" data-scroll-section>
+    <section className="section-padding bg-black px-4 text-white md:px-8" data-scroll-section>
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-10 text-center">
-          <h2 className="font-display text-4xl font-bold tracking-tight text-white md:text-5xl">
+          <h2 className="h2 text-white">
             Our Presence
           </h2>
-          <p className="mt-2 text-sm text-white/80 md:text-base">
+          <p className="p mt-2 text-white/80">
             Experience the Power of Smart Products
           </p>
         </div>
@@ -135,7 +135,7 @@ const OurPresenceSection: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <p className="mt-3 text-sm font-semibold text-white md:text-[15px]">
+              <p className="mt-3 font-semibold text-white">
                 {location.city}
               </p>
             </motion.div>

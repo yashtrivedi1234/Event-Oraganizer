@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 
 const FinalCTASection: React.FC = () => {
   return (
-    <section className="py-40 px-6 md:px-12 text-center relative overflow-hidden" data-scroll-section>
+    <section className="section-padding relative overflow-hidden px-6 text-center md:px-12" data-scroll-section>
       <div className="max-w-4xl mx-auto relative z-10">
         <h2 className="h2 font-display font-bold uppercase tracking-tighter mb-12">
           READY TO <span className="text-accent">CELEBRATE?</span>

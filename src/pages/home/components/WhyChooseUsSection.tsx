@@ -13,10 +13,10 @@ const WhyChooseUsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-32 px-6 md:px-12 bg-white text-black" data-scroll-section>
+    <section className="section-padding bg-white px-6 text-black md:px-12" data-scroll-section>
       <div className="max-w-7xl mx-auto">
         <div className="mb-24">
-          <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-4 block">Our Promise</span>
+          <span className="section-eyebrow">Our Promise</span>
           <h2 className="h2 font-display font-bold uppercase tracking-tighter">WHY CHOOSE <span className="text-accent">BAMBOO GROVES</span></h2>
         </div>
 
@@ -35,8 +35,8 @@ const WhyChooseUsSection: React.FC = () => {
               <div className="mb-6 text-accent">
                 <IconComponent size={48} strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-bold uppercase tracking-widest mb-4">{item.title}</h3>
-              <p className="text-black/60 leading-relaxed">{item.desc}</p>
+              <h3 className="h4 mb-4 font-bold uppercase tracking-widest">{item.title}</h3>
+              <p className="p text-black/60">{item.desc}</p>
             </motion.div>
           );
           })}

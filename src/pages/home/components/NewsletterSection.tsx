@@ -2,10 +2,10 @@ import React from 'react';
 
 const NewsletterSection: React.FC = () => {
   return (
-    <section className="py-32 px-6 md:px-12 bg-black border-y border-white/10" data-scroll-section>
+    <section className="section-padding border-y border-white/10 bg-black px-6 md:px-12" data-scroll-section>
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="h2 font-display font-bold uppercase tracking-tighter mb-8">STAY IN THE <span className="text-accent">LOOP</span></h2>
-        <p className="text-muted mb-12 max-w-xl mx-auto">Subscribe to receive exclusive insights into the world of luxury event production and early access to our signature showcases.</p>
+        <p className="p mb-12 mx-auto max-w-xl text-muted">Subscribe to receive exclusive insights into the world of luxury event production and early access to our signature showcases.</p>
         <form className="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
           <input 
             type="email" 

@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const FeaturedWorkSection: React.FC = () => {
   return (
-    <section className="py-32 px-6 md:px-12" data-scroll-section>
+    <section className="section-padding px-6 md:px-12" data-scroll-section>
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-end mb-20">
           <h2 className="h2 font-display font-bold uppercase tracking-tighter">

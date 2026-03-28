@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const AboutUsSection: React.FC = () => {
   return (
-    <section className="px-6 py-24 md:px-12 md:py-32 bg-background" data-scroll-section>
+    <section className="section-padding bg-background px-6 md:px-12" data-scroll-section>
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
@@ -34,12 +34,12 @@ const AboutUsSection: React.FC = () => {
               <span className="mb-5 block text-sm font-medium text-white/90 md:text-base">
                 About Bamboo Groves
               </span>
-              <h2 className="mb-6 font-sans text-4xl font-light leading-[0.95] text-white md:text-6xl">
+              <h2 className="h2 mb-6 text-white">
                 A New Standard
                 <br />
                 Of Celebration
               </h2>
-              <p className="mb-8 max-w-xl text-base leading-8 text-white/85 md:text-lg">
+              <p className="p mb-8 max-w-xl text-white/85">
                 Bamboo Groves crafts luxury events that feel cinematic, precise, and deeply personal.
                 From corporate galas to private milestone celebrations, we blend storytelling, design,
                 and flawless execution to create experiences that leave a lasting impression.
@@ -47,11 +47,11 @@ const AboutUsSection: React.FC = () => {
 
               <div className="mb-8 grid grid-cols-2 gap-4 text-white/80">
                 <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                  <p className="text-2xl font-semibold text-white">500+</p>
+                  <p className="font-semibold text-white">500+</p>
                   <p className="mt-1 text-xs uppercase tracking-[0.3em]">Events Produced</p>
                 </div>
                 <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                  <p className="text-2xl font-semibold text-white">24</p>
+                  <p className="font-semibold text-white">24</p>
                   <p className="mt-1 text-xs uppercase tracking-[0.3em]">Countries Reached</p>
                 </div>
               </div>

@@ -28,8 +28,8 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({ projectTitle }) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3 }}
       >
-        <h3 className="text-accent font-bold text-lg mb-2">Thank You!</h3>
-        <p className="text-white/60 text-sm">
+        <h3 className="text-accent font-bold mb-2">Thank You!</h3>
+        <p className="text-white/60">
           We've received your details for <span className="text-accent font-semibold">{projectTitle}</span>. 
           <br />
           We'll be in touch soon!

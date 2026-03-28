@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 const ToolkitSection: React.FC = () => {
   return (
-    <section className="py-32 px-6 md:px-12 bg-black/20 backdrop-blur-sm">
+    <section className="section-padding bg-black/20 px-6 backdrop-blur-sm md:px-12">
       <div className="max-w-7xl mx-auto">
         <h2 className="h2 font-display font-bold uppercase tracking-tighter mb-20 text-center">Our Toolkit</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 perspective-1000">

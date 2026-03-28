@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 const VisionSection: React.FC = () => {
   return (
-    <section className="py-48 px-6 md:px-12 relative overflow-hidden" data-scroll-section>
+    <section className="section-padding relative overflow-hidden px-6 md:px-12" data-scroll-section>
       {/* Pulsing Background Elements */}
       <div className="absolute inset-0 z-0">
         <motion.div 
@@ -40,12 +40,12 @@ const VisionSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <span className="text-accent font-mono text-sm uppercase tracking-[0.3em] mb-8 block">Our Philosophy</span>
+          <span className="section-eyebrow mb-8">Our Philosophy</span>
           <h2 className="h2 font-display font-bold uppercase tracking-tighter leading-[1.1] mb-12">
             WE DON'T JUST PLAN EVENTS. <br />
             <span className="text-white/20 outline-text">WE DESIGN LEGACIES.</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted leading-relaxed max-w-3xl mx-auto font-light">
+          <p className="p mx-auto max-w-3xl text-muted md:text-2xl font-light">
             At Bamboo Groves, we believe every celebration is an opportunity to tell a story that resonates across generations. Our approach blends architectural precision with cinematic emotion, ensuring your most important moments are etched in time.
           </p>
         </motion.div>
