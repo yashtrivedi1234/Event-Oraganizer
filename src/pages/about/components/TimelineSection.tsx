@@ -7,9 +7,9 @@ const TimelineSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* h2 global base style: Montserrat, uppercase, 700 weight, clamp size */}
-        <h2 className="mb-20 text-black">Our Milestones</h2>
+        <h2 className="mb-10 text-black">Our Milestones</h2>
 
-        <div className="space-y-20">
+        <div className="space-y-5">
           {[
             { year: '2025', title: 'Global Expansion', company: 'International Galas', desc: 'Successfully produced our first multi-city European tour for a major tech brand.' },
             { year: '2022', title: 'Award for Innovation', company: 'Event Excellence Awards', desc: 'Recognized for our pioneering use of immersive AR in live event spaces.' },
@@ -21,7 +21,7 @@ const TimelineSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.8, delay: i * 0.1 }}
-              className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start border-b border-black/10 pb-12"
+              className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start border-b border-black/10 pb-2"
             >
               {/* heading utility: Montserrat, uppercase, tracking — accent color */}
               <span className="heading font-mono font-bold text-accent">{item.year}</span>

@@ -7,7 +7,7 @@ const ToolkitSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* h2 global base style: Montserrat, uppercase, 700 weight, clamp size */}
-        <h2 className="mb-20 text-center">Our Toolkit</h2>
+        <h2 className="mb-2 text-center">Our Toolkit</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 perspective-1000">
           {['Creative Direction', 'Logistics Management', 'Technical Production', 'Vendor Curation', 'Spatial Design', 'Guest Experience', 'Brand Integration', 'Budget Strategy'].map((skill, i) => (
