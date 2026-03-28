@@ -12,15 +12,15 @@ const AboutHeroSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-12 leading-[0.8]"
         >
-          THE ART <br /> OF THE <br /> <span className="text-accent">EXPERIENCE.</span>
+          THE ART  OF THE  <span className="text-accent">EXPERIENCE.</span>
         </motion.h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
-          <div className="aspect-[3/4] overflow-hidden">
+        <div className="grid grid-cols-1 gap-20 items-start md:grid-cols-2 md:items-stretch">
+          <div className="overflow-hidden md:h-full">
             <img
               src="https://picsum.photos/seed/event-planner/800/1000"
               alt="Event Planner"
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
               referrerPolicy="no-referrer"
             />
           </div>
