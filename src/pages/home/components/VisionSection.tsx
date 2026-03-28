@@ -46,12 +46,12 @@ const VisionSection: React.FC = () => {
           {/* h2 global base style handles: Montserrat, uppercase, 700 weight, clamp size */}
           {/* outline-text global utility: transparent fill with accent stroke */}
           <h2 className="mb-2">
-            WE DON'T JUST PLAN EVENTS <br />
+            WE DON'T JUST PLAN EVENTS. <br />
             <span className="outline-text">WE DESIGN LEGACIES.</span>
           </h2>
 
           {/* p global base style: Inter, 1.7 line-height, muted color */}
-          <p className="">
+          <p className="mx-auto font-light">
             At Bamboo Groves, we believe every celebration is an opportunity to tell a story that
             resonates across generations. Our approach blends architectural precision with cinematic
             emotion, ensuring your most important moments are etched in time.
