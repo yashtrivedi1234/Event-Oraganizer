@@ -52,8 +52,10 @@ const FeaturesSection: React.FC = () => {
   return (
     <section className="section-padding bg-black px-4 text-white md:px-8" data-scroll-section>
       <div className="mx-auto max-w-7xl">
-        <div className="mb-16 text-center">
-          <h2 className="h2 text-white">
+
+        {/* h2 base styles handle karte hain: Montserrat, uppercase, weight, size */}
+        <div className="mb-2 text-center">
+          <h2 className="text-white">
             Event Planning Features
           </h2>
         </div>
@@ -80,10 +82,13 @@ const FeaturesSection: React.FC = () => {
                 </div>
 
                 <div className="pt-1">
-                  <h3 className="h4 mb-3 text-white">
+                  {/* h4 base styles: Montserrat, uppercase, 600 weight */}
+                  <h4 className="mb-3 text-white">
                     {feature.title}
-                  </h3>
-                  <p className="p max-w-xl text-white/88">
+                  </h4>
+
+                  {/* p base styles: Inter, 1.7 line-height, muted color — text-white/88 se override */}
+                  <p className="max-w-xl text-white/80">
                     {feature.description}
                   </p>
                 </div>

@@ -74,6 +74,7 @@ export const HeroSection: React.FC = () => {
         </Canvas>
       </div>
 
+      {/* Brand lockup — section-label for "Bamboo", h1 base style for "Groves" */}
       <div className="absolute left-1/2 top-8 z-50 flex -translate-x-1/2 flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -81,14 +82,13 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center"
         >
-          <span className="mb-1 block text-[10px] font-bold uppercase tracking-[1em] text-accent-green">
-            Bamboo
-          </span>
-          <h1 className="font-black uppercase tracking-tighter text-white">Groves</h1>
+          <span className="section-label mb-1">Bamboo</span>
+          <h1 className="text-white">Groves</h1>
         </motion.div>
       </div>
 
       <div className="relative z-10 flex h-full w-full flex-col md:block">
+        {/* Corporate side */}
         <motion.div
           style={{
             clipPath: typeof window !== 'undefined' && window.innerWidth >= 768 ? leftClipPath : 'none',
@@ -109,23 +109,27 @@ export const HeroSection: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
             >
-              <h2 className="mb-8 font-black uppercase leading-none tracking-tighter text-white">
-                Corporate <br /> <span className="italic text-accent-green">Events</span>
+              {/* h2 global base style: Montserrat, uppercase, 700 weight */}
+              <h2 className="mb-8 text-white">
+                Corporate <br />
+                <span className="italic text-accent">Events</span>
               </h2>
               <motion.button
-                className="flex items-center space-x-4 text-white group/btn"
+                className="group/btn flex items-center space-x-4 text-white"
                 whileHover={{ x: 10 }}
                 onClick={() => navigate('/portfolio')}
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-300 group-hover/btn:border-accent-green group-hover/btn:bg-accent-green md:h-12 md:w-12">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-300 group-hover/btn:border-accent group-hover/btn:bg-accent md:h-12 md:w-12">
                   <ArrowRight size={18} className="transition-colors group-hover/btn:text-black" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest">Explore More</span>
+                {/* section-label utility: uppercase, tracking, accent color — color override to white */}
+                <span className="section-label mb-0 text-white">Explore More</span>
               </motion.button>
             </motion.div>
           </div>
         </motion.div>
 
+        {/* Private / Social side */}
         <motion.div
           style={{
             clipPath: typeof window !== 'undefined' && window.innerWidth >= 768 ? rightClipPath : 'none',
@@ -147,34 +151,37 @@ export const HeroSection: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             >
-              <h2 className="mb-8 font-black uppercase leading-none tracking-tighter text-white">
-                Social <br /> <span className="italic text-accent-green">Events</span>
+              {/* h2 global base style */}
+              <h2 className="mb-8 text-white">
+                Social <br />
+                <span className="italic text-accent">Events</span>
               </h2>
               <motion.button
-                className="flex items-center space-x-4 text-white group/btn md:flex-row-reverse md:space-x-reverse"
+                className="group/btn flex items-center space-x-4 text-white md:flex-row-reverse md:space-x-reverse"
                 whileHover={{ x: typeof window !== 'undefined' && window.innerWidth >= 768 ? -10 : 10 }}
                 onClick={() => navigate('/portfolio')}
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-500 group-hover/btn:border-accent-green group-hover/btn:bg-accent-green md:h-12 md:w-12">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-500 group-hover/btn:border-accent group-hover/btn:bg-accent md:h-12 md:w-12">
                   <ArrowRight size={18} className="transition-colors group-hover/btn:text-black" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest">Explore More</span>
+                <span className="section-label mb-0 text-white">Explore More</span>
               </motion.button>
             </motion.div>
           </div>
         </motion.div>
       </div>
 
+      {/* Coordinates — mono text, no global utility needed */}
       <div className="absolute left-12 top-12 z-50 hidden md:block">
         <div className="flex flex-col space-y-1">
-          <span className="text-[8px] font-mono tracking-tighter text-white/20">LAT: 26.8467° N</span>
-          <span className="text-[8px] font-mono tracking-tighter text-white/20">LNG: 80.9462° E</span>
+          <span className="font-mono text-[8px] tracking-tighter text-white/20">LAT: 26.8467° N</span>
+          <span className="font-mono text-[8px] tracking-tighter text-white/20">LNG: 80.9462° E</span>
         </div>
       </div>
 
       <div className="absolute bottom-12 right-12 z-50 hidden md:block">
         <div className="text-right">
-          <span className="text-[8px] font-mono uppercase tracking-tighter text-white/20">
+          <span className="font-mono text-[8px] uppercase tracking-tighter text-white/20">
             Luxury Event Curators
           </span>
         </div>

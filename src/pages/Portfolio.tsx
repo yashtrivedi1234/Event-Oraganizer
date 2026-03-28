@@ -17,36 +17,37 @@ const Portfolio: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   useEffect(() => {
-    // Check if opened from QR code
     const params = new URLSearchParams(window.location.search);
     const projectId = params.get('project');
-    
+
     if (projectId) {
       const project = projects.find(p => p.id === parseInt(projectId));
       if (project) {
         setSelectedProject(project);
         setModalOpen(true);
-        // Clean URL
         window.history.replaceState({}, document.title, window.location.pathname);
       }
     }
   }, []);
 
-  const filteredProjects = filter === 'All' 
-    ? projects 
+  const filteredProjects = filter === 'All'
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (
     <div className="pt-32 pb-20 px-6 md:px-12 bg-transparent">
       <div className="max-w-7xl mx-auto">
+
         <header className="mb-20">
-          <h1 className="h1 font-display font-bold uppercase tracking-tighter mb-8">Productions</h1>
+          {/* h1 global base style: Montserrat, uppercase, 800 weight, clamp size */}
+          <h1 className="mb-8">Productions</h1>
+
           <div className="flex flex-wrap gap-4">
             {['All', 'Corporate', 'Private'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest transition-all ${
+                className={`heading px-8 py-3 rounded-full text-sm font-bold transition-all ${
                   filter === cat ? 'bg-accent text-white' : 'bg-white/5 text-white hover:bg-white/10'
                 }`}
               >
@@ -56,11 +57,11 @@ const Portfolio: React.FC = () => {
           </div>
         </header>
 
-        <motion.div 
+        <motion.div
           layout
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-2000"
         >
-          <AnimatePresence mode='popLayout'>
+          <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, i) => (
               <motion.div
                 key={project.id}
@@ -68,12 +69,12 @@ const Portfolio: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
                 animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                 exit={{ opacity: 0, scale: 0.9, rotateY: -15 }}
-                whileHover={{ 
-                  y: -10, 
-                  rotateY: 5, 
+                whileHover={{
+                  y: -10,
+                  rotateY: 5,
                   rotateX: -5,
                   z: 50,
-                  boxShadow: "0 25px 50px rgba(0,0,0,0.5)"
+                  boxShadow: '0 25px 50px rgba(0,0,0,0.5)',
                 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
                 onClick={() => {
@@ -81,30 +82,34 @@ const Portfolio: React.FC = () => {
                   setModalOpen(true);
                 }}
                 className="group cursor-pointer rounded-2xl overflow-hidden"
-                style={{ transformStyle: "preserve-3d" }}
+                style={{ transformStyle: 'preserve-3d' }}
               >
-                <div className="aspect-[4/3] overflow-hidden mb-6 relative" style={{ transformStyle: "preserve-3d" }}>
-                  <motion.img 
-                    src={project.img} 
-                    alt={project.title} 
+                <div className="aspect-[4/3] overflow-hidden mb-6 relative" style={{ transformStyle: 'preserve-3d' }}>
+                  <motion.img
+                    src={project.img}
+                    alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
-                    style={{ transform: "translateZ(20px)" }}
+                    style={{ transform: 'translateZ(20px)' }}
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-8 gap-6">
                     <div className="w-32 h-32 bg-white p-2 rounded-lg">
-                      <img 
+                      <img
                         src={`https://api.qrserver.com/v1/create-qr-code/?size=120&data=${encodeURIComponent(import.meta.env.VITE_APP_URL + `/portfolio?project=${project.id}`)}`}
                         alt="QR Code"
                         className="w-full h-full"
                       />
                     </div>
-                    <p className="text-white text-xs font-semibold uppercase tracking-widest">Scan to Connect</p>
+                    {/* section-label: uppercase, tracking, accent color — mb-0 override */}
+                    <span className="section-label mb-0 text-white">Scan to Connect</span>
                   </div>
                 </div>
-                <div className="px-2 pb-4" style={{ transform: "translateZ(30px)" }}>
-                  <span className="text-accent font-mono text-xs uppercase tracking-widest mb-2 block">{project.category}</span>
-                  <h3 className="h3 font-display font-bold uppercase">{project.title}</h3>
+
+                <div className="px-2 pb-4" style={{ transform: 'translateZ(30px)' }}>
+                  {/* section-label: accent color, uppercase, tracking */}
+                  <span className="section-label">{project.category}</span>
+                  {/* h3 global base style: Montserrat, uppercase, 600 weight */}
+                  <h3>{project.title}</h3>
                 </div>
               </motion.div>
             ))}

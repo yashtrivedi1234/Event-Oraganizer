@@ -108,11 +108,14 @@ const OurPresenceSection: React.FC = () => {
   return (
     <section className="section-padding bg-black px-4 text-white md:px-8" data-scroll-section>
       <div className="mx-auto max-w-[1280px]">
-        <div className="mb-10 text-center">
-          <h2 className="h2 text-white">
+
+        <div className="mb-2 text-center">
+          {/* h2 global base style: Montserrat, uppercase, 700 weight */}
+          <h2 className="text-white">
             Our Presence
           </h2>
-          <p className="p mt-2 text-white/80">
+          {/* p global base style: Inter, 1.7 line-height — color override for white */}
+          <p className="mt-2 text-white/80">
             Experience the Power of Smart Products
           </p>
         </div>
@@ -135,7 +138,8 @@ const OurPresenceSection: React.FC = () => {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <p className="mt-3 font-semibold text-white">
+              {/* heading utility: Montserrat, uppercase, tracking */}
+              <p className="heading mt-3 text-sm font-semibold text-white">
                 {location.city}
               </p>
             </motion.div>
@@ -146,4 +150,4 @@ const OurPresenceSection: React.FC = () => {
   );
 };
 
-export default OurPresenceSection;
+export default OurPresenceSection;  

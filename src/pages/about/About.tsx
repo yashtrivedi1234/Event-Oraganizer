@@ -5,7 +5,7 @@ import ToolkitSection from './components/ToolkitSection';
 
 const About: React.FC = () => {
   return (
-    <div className="pt-32 pb-20">
+    <div className="pt-32">
       <AboutHeroSection />
       <TimelineSection />
       <ToolkitSection />

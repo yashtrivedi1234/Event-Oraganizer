@@ -29,8 +29,10 @@ const GrowWithUsSection: React.FC = () => {
   return (
     <section className="section-padding bg-[#02040b] px-6 text-white md:px-10" data-scroll-section>
       <div className="mx-auto max-w-7xl">
-        <div className="mb-16 text-center">
-          <h2 className="h2 text-white">
+
+        <div className="mb-2 text-center">
+          {/* h2 global base style: Montserrat, uppercase, 700 weight */}
+          <h2 className="text-white">
             Grow With Us
           </h2>
         </div>
@@ -51,10 +53,14 @@ const GrowWithUsSection: React.FC = () => {
                 <div className="mb-5 flex h-24 w-24 items-center justify-center text-accent drop-shadow-[0_0_10px_rgba(136,171,50,0.45)]">
                   <Icon size={68} strokeWidth={1.5} />
                 </div>
-                <h3 className="h3 mb-3 text-white">
+
+                {/* h3 global base style: Montserrat, uppercase, 600 weight */}
+                <h3 className="mb-3 text-white">
                   {item.title}
                 </h3>
-                <p className="p max-w-[260px] text-white/90">
+
+                {/* p global base style: Inter, 1.7 line-height — color override for white */}
+                <p className="max-w-[260px] text-white/90">
                   {item.description}
                 </p>
               </motion.div>

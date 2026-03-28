@@ -4,22 +4,21 @@ import { motion } from 'motion/react';
 const ExploreExperiencesSection: React.FC = () => {
   return (
     <section
-      className="relative overflow-hidden bg-[#02030a] px-6 pb-0 text-white "
+      className="relative overflow-hidden bg-[#02030a] px-6 pb-0 text-white"
       data-scroll-section
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(255,255,255,0.06),transparent_28%),radial-gradient(circle_at_50%_100%,rgba(255,255,255,0.03),transparent_35%)]" />
 
       <div className="relative z-10 mx-auto max-w-7xl text-center">
+        {/* h1 global base style: Montserrat, uppercase, 800 weight, clamp size */}
         <motion.h2
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.45 }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="h1 text-white tracking-[0.18em]"
+          className="text-white tracking-[0.18em]"
         >
-          Explore
-          
-          Experiences
+          Explore Experiences
         </motion.h2>
       </div>
 

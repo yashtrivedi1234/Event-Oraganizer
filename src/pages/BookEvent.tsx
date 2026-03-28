@@ -49,10 +49,8 @@ const eventTypes = [
   'Product Launch', 'Concert', 'Festival', 'Other',
 ];
 
-// ── Today's date as yyyy-mm-dd (for min on date picker) ───────────────────────
 const todayStr = new Date().toISOString().split('T')[0];
 
-// ── Small error message component ────────────────────────────────────────────
 const Err: React.FC<{ msg?: string }> = ({ msg }) =>
   msg ? (
     <motion.p
@@ -64,7 +62,6 @@ const Err: React.FC<{ msg?: string }> = ({ msg }) =>
     </motion.p>
   ) : null;
 
-// ── Main Component ─────────────────────────────────────────────────────────────
 const BookEvent: React.FC = () => {
   const [formData, setFormData]   = useState<FormData>(EMPTY);
   const [errors, setErrors]       = useState<FormErrors>({});
@@ -72,7 +69,6 @@ const BookEvent: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // ── Validate a single field on blur ─────────────────────────────────────────
   const validateField = async (name: keyof FormData, value: string) => {
     try {
       await Yup.reach(bookingSchema, name).validate(
@@ -92,7 +88,6 @@ const BookEvent: React.FC = () => {
     const { name, value } = e.target;
     const key = name as keyof FormData;
 
-    // For phone: only allow digits, max 10
     if (key === 'phone') {
       const digits = value.replace(/\D/g, '').slice(0, 10);
       setFormData(prev => ({ ...prev, phone: digits }));
@@ -100,7 +95,6 @@ const BookEvent: React.FC = () => {
       return;
     }
 
-    // For guestCount / budget: only allow non-negative integers
     if (key === 'guestCount' || key === 'budget') {
       const stripped = value.replace(/[^0-9]/g, '');
       setFormData(prev => ({ ...prev, [key]: stripped }));
@@ -127,7 +121,6 @@ const BookEvent: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Mark all touched
     const allTouched = Object.keys(EMPTY).reduce(
       (acc, k) => ({ ...acc, [k]: true }),
       {} as Record<keyof FormData, boolean>
@@ -158,7 +151,6 @@ const BookEvent: React.FC = () => {
     }
   };
 
-  // ── Input className helper ──────────────────────────────────────────────────
   const inputCls = (name: keyof FormData) =>
     `w-full bg-transparent border-b py-4 outline-none transition-colors ${
       errors[name] && touched[name]
@@ -169,6 +161,7 @@ const BookEvent: React.FC = () => {
   return (
     <div className="pt-32 pb-20 px-6 md:px-12 bg-transparent">
       <div className="max-w-7xl mx-auto">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -176,25 +169,30 @@ const BookEvent: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="mb-20"
         >
-          <h1 className="h1 font-display font-bold uppercase tracking-tighter mb-6">
+          {/* h1 global base style: Montserrat, uppercase, 800 weight, clamp size */}
+          <h1 className="mb-6">
             Book Your <br /> <span className="text-accent">Perfect Event</span>
           </h1>
-          <p className="text-muted leading-relaxed max-w-2xl">
+          {/* p global base style: Inter, 1.7 line-height, muted color */}
+          <p className="max-w-2xl">
             Let's bring your vision to life. Fill out the form below and our team will get back to you within 24 hours with a customized proposal.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
+
           {/* Benefits Column */}
           <div className="lg:col-span-1">
             <div className="sticky top-32">
-              <h3 className="h3 font-display font-bold mb-8 uppercase tracking-tighter">Why Choose Us</h3>
+              {/* h3 global base style: Montserrat, uppercase, 600 weight */}
+              <h3 className="mb-8">Why Choose Us</h3>
+
               <div className="space-y-6">
                 {[
-                  { icon: <Package size={32} />, title: 'Full Service',         desc: 'End-to-end event management' },
-                  { icon: <Users   size={32} />, title: 'Expert Team',          desc: '500+ successful events' },
-                  { icon: <Calendar size={32} />, title: 'Flexible Dates',      desc: 'Available 7 days a week' },
-                  { icon: <DollarSign size={32} />, title: 'Transparent Pricing', desc: 'No hidden charges' },
+                  { icon: <Package size={32} />,    title: 'Full Service',         desc: 'End-to-end event management' },
+                  { icon: <Users size={32} />,      title: 'Expert Team',          desc: '500+ successful events' },
+                  { icon: <Calendar size={32} />,   title: 'Flexible Dates',       desc: 'Available 7 days a week' },
+                  { icon: <DollarSign size={32} />, title: 'Transparent Pricing',  desc: 'No hidden charges' },
                 ].map((benefit, i) => (
                   <motion.div
                     key={i}
@@ -206,8 +204,10 @@ const BookEvent: React.FC = () => {
                   >
                     <div className="text-accent flex-shrink-0 mt-1">{benefit.icon}</div>
                     <div>
-                      <h4 className="font-bold mb-1">{benefit.title}</h4>
-                      <p className="text-muted">{benefit.desc}</p>
+                      {/* h4 global base style */}
+                      <h4 className="mb-1">{benefit.title}</h4>
+                      {/* p global base style — muted color already set */}
+                      <p>{benefit.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -215,8 +215,8 @@ const BookEvent: React.FC = () => {
 
               <div className="mt-12 pt-12 border-t border-white/10 space-y-6">
                 {[
-                  { icon: <Mail size={18} />, label: 'Email',  value: 'events@bamboo.com' },
-                  { icon: <Phone size={18} />, label: 'Phone', value: '+1 (555) 123-4567' },
+                  { icon: <Mail size={18} />,  label: 'Email',  value: 'events@bamboo.com' },
+                  { icon: <Phone size={18} />, label: 'Phone',  value: '+1 (555) 123-4567' },
                   { icon: <MapPin size={18} />, label: 'Studio', value: 'New York, NY' },
                 ].map(({ icon, label, value }) => (
                   <div key={label} className="flex items-center gap-4">
@@ -224,7 +224,8 @@ const BookEvent: React.FC = () => {
                       {icon}
                     </div>
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-muted font-bold">{label}</p>
+                      {/* section-label: accent color, uppercase, tracking — inline so mb-0 */}
+                      <span className="section-label mb-0">{label}</span>
                       <p className="text-white">{value}</p>
                     </div>
                   </div>
@@ -255,8 +256,9 @@ const BookEvent: React.FC = () => {
                 >
                   <CheckCircle2 size={80} />
                 </motion.div>
-                <h3 className="h3 font-display font-bold mb-4">Thank You!</h3>
-                <p className="text-muted mb-2">Your booking request has been received.</p>
+                {/* h3 global base style */}
+                <h3 className="mb-4">Thank You!</h3>
+                <p className="mb-2">Your booking request has been received.</p>
                 <p className="text-accent font-semibold">We'll contact you within 24 hours.</p>
               </motion.div>
             ) : (
@@ -265,9 +267,10 @@ const BookEvent: React.FC = () => {
                 {/* Row 1 — Event Type & Date */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                  {/* ── Custom Dropdown ── */}
+                  {/* Custom Dropdown */}
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-bold text-muted">Event Type *</label>
+                    {/* section-label inline — mb-0 to override default margin */}
+                    <label className="section-label mb-0">Event Type *</label>
                     <div className="relative">
                       <button
                         type="button"
@@ -319,9 +322,9 @@ const BookEvent: React.FC = () => {
                     <Err msg={touched.eventType ? errors.eventType : undefined} />
                   </div>
 
-                  {/* ── Date Picker ── */}
+                  {/* Date Picker */}
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-bold text-muted">Event Date *</label>
+                    <label className="section-label mb-0">Event Date *</label>
                     <input
                       type="date"
                       name="eventDate"
@@ -340,7 +343,7 @@ const BookEvent: React.FC = () => {
                 {/* Row 2 — Guest Count & Budget */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-bold text-muted">Expected Guests *</label>
+                    <label className="section-label mb-0">Expected Guests *</label>
                     <input
                       type="text"
                       inputMode="numeric"
@@ -354,7 +357,7 @@ const BookEvent: React.FC = () => {
                     <Err msg={touched.guestCount ? errors.guestCount : undefined} />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-bold text-muted">Budget (USD) *</label>
+                    <label className="section-label mb-0">Budget (USD) *</label>
                     <input
                       type="text"
                       inputMode="numeric"
@@ -372,7 +375,7 @@ const BookEvent: React.FC = () => {
                 {/* Row 3 — Name & Email */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-bold text-muted">Full Name *</label>
+                    <label className="section-label mb-0">Full Name *</label>
                     <input
                       type="text"
                       name="fullName"
@@ -385,7 +388,7 @@ const BookEvent: React.FC = () => {
                     <Err msg={touched.fullName ? errors.fullName : undefined} />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-bold text-muted">Email Address *</label>
+                    <label className="section-label mb-0">Email Address *</label>
                     <input
                       type="email"
                       name="email"
@@ -402,7 +405,7 @@ const BookEvent: React.FC = () => {
                 {/* Row 4 — Phone & Location */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-bold text-muted">Phone Number *</label>
+                    <label className="section-label mb-0">Phone Number *</label>
                     <input
                       type="text"
                       inputMode="numeric"
@@ -417,7 +420,7 @@ const BookEvent: React.FC = () => {
                     <Err msg={touched.phone ? errors.phone : undefined} />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-xs uppercase tracking-widest font-bold text-muted">Event Location *</label>
+                    <label className="section-label mb-0">Event Location *</label>
                     <input
                       type="text"
                       name="location"
@@ -433,7 +436,7 @@ const BookEvent: React.FC = () => {
 
                 {/* Description */}
                 <div className="space-y-2">
-                  <label className="text-xs uppercase tracking-widest font-bold text-muted">Event Description</label>
+                  <label className="section-label mb-0">Event Description</label>
                   <textarea
                     name="description"
                     value={formData.description}
@@ -450,12 +453,13 @@ const BookEvent: React.FC = () => {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full bg-accent text-white py-6 rounded-2xl font-bold uppercase tracking-widest flex items-center justify-center gap-3 mt-10"
+                  className="heading w-full bg-accent text-white py-6 rounded-2xl font-bold flex items-center justify-center gap-3 mt-10"
                 >
                   Book Event <Send size={20} />
                 </motion.button>
 
-                <p className="text-xs text-muted text-center">
+                {/* p global base style — muted color */}
+                <p className="text-center">
                   We'll review your request and send you a personalized proposal.
                 </p>
               </form>

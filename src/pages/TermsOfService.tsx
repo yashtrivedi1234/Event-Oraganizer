@@ -76,19 +76,20 @@ const TermsOfService: React.FC = () => {
 
   return (
     <div className="pt-32 pb-20">
+
       {/* Hero */}
       <section className="px-6 md:px-12 mb-20">
         <div className="max-w-4xl mx-auto">
+          {/* h1 global base style: Montserrat, uppercase, 800 weight, clamp size */}
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            className="h1 font-display font-bold uppercase leading-[0.9] tracking-tighter mb-8"
+            className="leading-[0.9] mb-8"
           >
             Terms of <span className="text-accent">Service</span>
           </motion.h1>
-          <p className="text-muted leading-relaxed">
-            Last Updated: March 26, 2026
-          </p>
+          {/* p global base style: Inter, 1.7 line-height, muted color */}
+          <p>Last Updated: March 26, 2026</p>
         </div>
       </section>
 
@@ -103,18 +104,20 @@ const TermsOfService: React.FC = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
             >
-              <h2 className="font-bold uppercase tracking-widest mb-6">{section.title}</h2>
-              
+              {/* h2 global base style: Montserrat, uppercase, 700 weight */}
+              <h2 className="mb-6">{section.title}</h2>
+
               {section.content && (
-                <p className="text-muted leading-relaxed mb-6">{section.content}</p>
+                <p className="mb-6">{section.content}</p>
               )}
 
               {section.subsections && (
                 <div className="space-y-6">
                   {section.subsections.map((subsection, j) => (
                     <div key={j}>
-                      <h3 className="font-bold text-accent mb-3">{subsection.subtitle}</h3>
-                      <p className="text-muted leading-relaxed">{subsection.text}</p>
+                      {/* h3 global base style: Montserrat, uppercase, 600 weight — accent color override */}
+                      <h3 className="mb-3 text-accent">{subsection.subtitle}</h3>
+                      <p>{subsection.text}</p>
                     </div>
                   ))}
                 </div>
@@ -129,7 +132,7 @@ const TermsOfService: React.FC = () => {
             viewport={{ once: true }}
             className="mt-20 p-10 bg-white/5 rounded-2xl border border-white/10"
           >
-            <p className="text-muted">
+            <p>
               These Terms of Service are subject to change at any time without notice. We encourage you to review this agreement periodically for updates. Your continued use of our services and website constitutes your acceptance of any changes made to these Terms of Service.
             </p>
           </motion.div>
