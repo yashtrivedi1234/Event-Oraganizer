@@ -128,7 +128,7 @@ const OurPresenceSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.35, delay: index * 0.02 }}
-              className="group text-center"
+              className="group mx-auto w-full max-w-[150px] text-center sm:max-w-[160px] lg:max-w-[172px]"
             >
               <div className="relative overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04] shadow-[0_18px_40px_rgba(0,0,0,0.42),0_6px_20px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.1)] transition-all duration-500 before:pointer-events-none before:absolute before:inset-0 before:bg-[linear-gradient(180deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_24%,rgba(255,255,255,0)_100%)] before:opacity-70 before:transition-opacity before:duration-500 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-20 after:bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,rgba(0,0,0,0.55)_100%)] after:opacity-80 after:transition-opacity after:duration-500 group-hover:-translate-y-2 group-hover:border-white/20 group-hover:shadow-[0_28px_60px_rgba(0,0,0,0.58),0_12px_28px_rgba(0,0,0,0.38),0_0_0_1px_rgba(255,255,255,0.06),inset_0_1px_0_rgba(255,255,255,0.18)] group-hover:before:opacity-100 group-hover:after:opacity-100">
                 <img
