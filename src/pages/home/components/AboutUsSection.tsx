@@ -11,9 +11,9 @@ const AboutUsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative overflow-hidden rounded-[28px] border border-white/10 bg-black shadow-[0_30px_120px_rgba(0,0,0,0.45)] min-h-[600px] md:min-h-[700px]"
+          className="relative overflow-hidden rounded-[28px] border border-white/10 bg-black shadow-[0_30px_120px_rgba(0,0,0,0.45)] min-h-[350px] md:min-h-[420px]"
         >
-          {/* Dummy background image */}
+          {/* Background image */}
           <img
             src="https://picsum.photos/seed/bamboo-event/1600/900"
             alt=""
@@ -31,17 +31,14 @@ const AboutUsSection: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
               className="w-full max-w-[560px] rounded-[26px] border border-white/15 bg-white/10 p-4 backdrop-blur-xl md:p-6"
             >
-              {/* Section Label — global .section-label utility */}
               <span className="section-label">
                 About Bamboo Groves
               </span>
 
-              {/* Heading — global h2 base styles */}
               <h2 className="mb-2 text-white">
                 A New Standard Of Celebration
               </h2>
 
-              {/* Body text — global p base styles override color for white */}
               <p className="mb-4 max-w-xl text-white/85 text-sm">
                 Bamboo Groves crafts luxury events that feel cinematic, precise, and deeply personal.
                 From corporate galas to private milestone celebrations, we blend storytelling, design,
@@ -50,7 +47,6 @@ const AboutUsSection: React.FC = () => {
 
               <div className="mb-4 grid grid-cols-2 gap-3 text-white/80">
                 <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                  {/* heading utility for stat numbers */}
                   <p className="heading font-semibold text-white">500+</p>
                   <p className="section-label mt-0.5 mb-0 text-xs">Events Produced</p>
                 </div>
@@ -60,7 +56,6 @@ const AboutUsSection: React.FC = () => {
                 </div>
               </div>
 
-             
             </motion.div>
           </div>
         </motion.div>
