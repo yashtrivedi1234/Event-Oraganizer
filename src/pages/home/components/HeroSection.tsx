@@ -1,9 +1,10 @@
-import React, { useRef, Suspense, useState, useEffect } from 'react';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial } from '@react-three/drei';
+import { PointMaterial, Points } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
-import { motion, useSpring, useTransform, useScroll } from 'motion/react';
+import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Stars = (props: any) => {
   const ref = useRef<any>(null);
@@ -34,16 +35,15 @@ const Stars = (props: any) => {
 export const HeroSection: React.FC = () => {
   const [hoveredSide, setHoveredSide] = useState<'corporate' | 'private' | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  
+  const navigate = useNavigate();
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"]
+    offset: ['start start', 'end start'],
   });
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  
-  const springConfig = { damping: 40, stiffness: 80, mass: 1 };
-  const splitPos = useSpring(50, springConfig);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const splitPos = useSpring(50, { damping: 40, stiffness: 80, mass: 1 });
 
   useEffect(() => {
     if (hoveredSide === 'corporate') splitPos.set(70);
@@ -51,17 +51,21 @@ export const HeroSection: React.FC = () => {
     else splitPos.set(50);
   }, [hoveredSide, splitPos]);
 
-  // Derive smooth strings for width and clipPath
-  const leftClipPath = useTransform(splitPos, (val) => 
-    `polygon(0 0, ${val + 10}% 0, ${val - 10}% 100%, 0 100%)`
+  const leftClipPath = useTransform(
+    splitPos,
+    (val) => `polygon(0 0, ${val + 10}% 0, ${val - 10}% 100%, 0 100%)`
   );
-  const rightClipPath = useTransform(splitPos, (val) => 
-    `polygon(${val + 10}% 0, 100% 0, 100% 100%, ${val - 10}% 100%)`
+  const rightClipPath = useTransform(
+    splitPos,
+    (val) => `polygon(${val + 10}% 0, 100% 0, 100% 100%, ${val - 10}% 100%)`
   );
 
   return (
-    <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-black" data-scroll-section>
-      {/* Three.js Background Layer */}
+    <section
+      ref={containerRef}
+      className="relative h-screen w-full overflow-hidden bg-black"
+      data-scroll-section
+    >
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Suspense fallback={null}>
@@ -70,116 +74,109 @@ export const HeroSection: React.FC = () => {
         </Canvas>
       </div>
 
-      {/* Top Center Brand Identity */}
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center">
+      <div className="absolute left-1/2 top-8 z-50 flex -translate-x-1/2 flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center"
         >
-          <span className="text-accent-green text-[10px] font-bold tracking-[1em] uppercase block mb-1">Bamboo</span>
-          <h1 className="text-white font-black tracking-tighter uppercase">Groves</h1>
+          <span className="mb-1 block text-[10px] font-bold uppercase tracking-[1em] text-accent-green">
+            Bamboo
+          </span>
+          <h1 className="font-black uppercase tracking-tighter text-white">Groves</h1>
         </motion.div>
       </div>
 
-      {/* Main Split Container */}
-      <div className="relative z-10 h-full w-full flex flex-col md:block">
-        {/* Left Side: Corporate */}
+      <div className="relative z-10 flex h-full w-full flex-col md:block">
         <motion.div
-          style={{ 
-            clipPath: typeof window !== 'undefined' && window.innerWidth >= 768 ? leftClipPath : 'none'
+          style={{
+            clipPath: typeof window !== 'undefined' && window.innerWidth >= 768 ? leftClipPath : 'none',
           }}
           onMouseEnter={() => setHoveredSide('corporate')}
           onMouseLeave={() => setHoveredSide(null)}
-          className="group absolute inset-0 md:w-full h-1/2 md:h-full overflow-hidden border-b md:border-b-0 border-white/5 cursor-pointer z-20"
+          className="group absolute inset-0 z-20 h-1/2 cursor-pointer overflow-hidden border-b border-white/5 md:h-full md:w-full md:border-b-0"
         >
-          <motion.div 
+          <motion.div
             style={{ y: backgroundY }}
-            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center scale-110 group-hover:scale-125 transition-transform duration-[1.5s] ease-out" 
+            className="absolute inset-0 scale-110 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-125"
           />
-          <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors duration-500" />
-          
-          <div className="relative h-full w-full md:w-1/2 flex flex-col justify-center p-8 md:p-24 z-30">
+          <div className="absolute inset-0 bg-black/60 transition-colors duration-500 group-hover:bg-black/30" />
+
+          <div className="relative z-30 flex h-full w-full flex-col justify-center p-8 md:w-1/2 md:p-24">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
             >
-              <span className="text-accent-green text-[10px] font-bold tracking-[0.5em] uppercase mb-4 block">01 / CORPORATE</span>
-              <h2 className="font-black uppercase tracking-tighter text-white mb-4 leading-none">
-                THE <br /> <span className="text-accent-green italic">SUMMIT</span>
+              <h2 className="mb-8 font-black uppercase leading-none tracking-tighter text-white">
+                Corporate <br /> <span className="italic text-accent-green">Events</span>
               </h2>
-              <p className="text-white/60 max-w-xs uppercase tracking-widest mb-8 leading-relaxed">
-                Architecting high-impact corporate environments that define industry standards.
-              </p>
-              <motion.button 
+              <motion.button
                 className="flex items-center space-x-4 text-white group/btn"
                 whileHover={{ x: 10 }}
+                onClick={() => navigate('/portfolio')}
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-accent-green group-hover/btn:border-accent-green transition-all duration-300">
-                  <ArrowRight size={18} className="group-hover/btn:text-black transition-colors" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-300 group-hover/btn:border-accent-green group-hover/btn:bg-accent-green md:h-12 md:w-12">
+                  <ArrowRight size={18} className="transition-colors group-hover/btn:text-black" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest">Explore Precision</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest">Explore More</span>
               </motion.button>
             </motion.div>
           </div>
         </motion.div>
 
-        {/* Right Side: Private */}
         <motion.div
-          style={{ 
+          style={{
             clipPath: typeof window !== 'undefined' && window.innerWidth >= 768 ? rightClipPath : 'none',
-            top: typeof window !== 'undefined' && window.innerWidth < 768 ? '50%' : '0'
+            top: typeof window !== 'undefined' && window.innerWidth < 768 ? '50%' : '0',
           }}
           onMouseEnter={() => setHoveredSide('private')}
           onMouseLeave={() => setHoveredSide(null)}
-          className="group absolute inset-0 md:w-full h-1/2 md:h-full overflow-hidden cursor-pointer z-10"
+          className="group absolute inset-0 z-10 h-1/2 cursor-pointer overflow-hidden md:h-full md:w-full"
         >
-          <motion.div 
+          <motion.div
             style={{ y: backgroundY }}
-            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center scale-110 group-hover:scale-125 transition-transform duration-[1.5s] ease-out" 
+            className="absolute inset-0 scale-110 bg-[url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-125"
           />
-          <div className="absolute inset-0 bg-black/60 group-hover:bg-black/30 transition-colors duration-500" />
+          <div className="absolute inset-0 bg-black/60 transition-colors duration-500 group-hover:bg-black/30" />
 
-          <div className="relative h-full w-full md:w-1/2 md:ml-auto flex flex-col justify-center items-start md:items-end p-8 md:p-24 z-30 text-left md:text-right">
+          <div className="relative z-30 flex h-full w-full flex-col items-start justify-center p-8 text-left md:ml-auto md:w-1/2 md:items-end md:p-24 md:text-right">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
             >
-              <span className="text-accent-green text-[10px] font-bold tracking-[0.5em] uppercase mb-4 block">02 / PRIVATE</span>
-              <h2 className="font-black uppercase tracking-tighter text-white mb-4 leading-none">
-                THE <br /> <span className="text-accent-green italic">SOIRÉE</span>
+              <h2 className="mb-8 font-black uppercase leading-none tracking-tighter text-white">
+                Social <br /> <span className="italic text-accent-green">Events</span>
               </h2>
-              <p className="text-white/60 max-w-xs uppercase tracking-widest mb-8 leading-relaxed md:ml-auto">
-                Curating intimate, luxury milestones that resonate with personal legacy.
-              </p>
-              <motion.button 
+              <motion.button
                 className="flex items-center space-x-4 text-white group/btn md:flex-row-reverse md:space-x-reverse"
                 whileHover={{ x: typeof window !== 'undefined' && window.innerWidth >= 768 ? -10 : 10 }}
+                onClick={() => navigate('/portfolio')}
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:bg-accent-green group-hover/btn:border-accent-green transition-all duration-500">
-                  <ArrowRight size={18} className="group-hover/btn:text-black transition-colors" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-500 group-hover/btn:border-accent-green group-hover/btn:bg-accent-green md:h-12 md:w-12">
+                  <ArrowRight size={18} className="transition-colors group-hover/btn:text-black" />
                 </div>
-                <span className="text-[10px] font-bold uppercase tracking-widest">Explore Intimacy</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest">Explore More</span>
               </motion.button>
             </motion.div>
           </div>
         </motion.div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-12 left-12 z-50 hidden md:block">
+      <div className="absolute left-12 top-12 z-50 hidden md:block">
         <div className="flex flex-col space-y-1">
-          <span className="text-[8px] text-white/20 font-mono tracking-tighter">LAT: 26.8467° N</span>
-          <span className="text-[8px] text-white/20 font-mono tracking-tighter">LNG: 80.9462° E</span>
+          <span className="text-[8px] font-mono tracking-tighter text-white/20">LAT: 26.8467° N</span>
+          <span className="text-[8px] font-mono tracking-tighter text-white/20">LNG: 80.9462° E</span>
         </div>
       </div>
-      
+
       <div className="absolute bottom-12 right-12 z-50 hidden md:block">
         <div className="text-right">
-          <span className="text-[8px] text-white/20 font-mono tracking-tighter uppercase">Luxury Event Curators</span>
+          <span className="text-[8px] font-mono uppercase tracking-tighter text-white/20">
+            Luxury Event Curators
+          </span>
         </div>
       </div>
     </section>

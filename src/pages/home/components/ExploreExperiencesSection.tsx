@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 const ExploreExperiencesSection: React.FC = () => {
   return (
     <section
-      className="relative overflow-hidden bg-[#02030a] px-6 pb-0 pt-24 text-white md:px-10 md:pt-32"
+      className="relative overflow-hidden bg-[#02030a] px-6 pb-0 text-white "
       data-scroll-section
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_12%,rgba(255,255,255,0.06),transparent_28%),radial-gradient(circle_at_50%_100%,rgba(255,255,255,0.03),transparent_35%)]" />
