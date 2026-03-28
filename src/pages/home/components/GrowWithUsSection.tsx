@@ -37,7 +37,7 @@ const GrowWithUsSection: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10">
           {items.map((item, index) => {
             const Icon = item.icon;
 
@@ -50,8 +50,8 @@ const GrowWithUsSection: React.FC = () => {
                 transition={{ duration: 0.35, delay: index * 0.06 }}
                 className="flex flex-col items-center text-center"
               >
-                <div className="mb-5 flex h-24 w-24 items-center justify-center text-accent drop-shadow-[0_0_10px_rgba(136,171,50,0.45)]">
-                  <Icon size={68} strokeWidth={1.5} />
+                <div className="mb-4 flex h-20 w-20 items-center justify-center text-accent drop-shadow-[0_0_10px_rgba(136,171,50,0.45)] md:h-24 md:w-24">
+                  <Icon size={56} strokeWidth={1.5} className="md:h-[68px] md:w-[68px]" />
                 </div>
 
                 {/* h3 global base style: Montserrat, uppercase, 600 weight */}
@@ -60,7 +60,7 @@ const GrowWithUsSection: React.FC = () => {
                 </h3>
 
                 {/* p global base style: Inter, 1.7 line-height — color override for white */}
-                <p className="max-w-[260px] text-white/90">
+                <p className="max-w-[260px] text-sm text-white/90 md:text-base">
                   {item.description}
                 </p>
               </motion.div>
