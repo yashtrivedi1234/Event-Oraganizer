@@ -16,15 +16,19 @@ const navLinks = [
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hideOnHomeHero, setHideOnHomeHero] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+      setHideOnHomeHero(location.pathname === '/' && window.scrollY < window.innerHeight * 0.85);
     };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   // Close menu on route change
   useEffect(() => {
@@ -43,13 +47,20 @@ const Navbar: React.FC = () => {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    if (hideOnHomeHero && isOpen) {
+      setIsOpen(false);
+    }
+  }, [hideOnHomeHero, isOpen]);
+
   return (
     <>
       <nav
         className={cn(
-          'fixed top-0 left-0 w-full z-50 transition-all duration-300 pointer-events-auto',
+          'fixed top-0 left-0 w-full z-50 transition-all duration-300',
           // Responsive padding: tight on mobile, generous on desktop
           'px-4 py-2 sm:px-6 sm:py-3 md:px-10 md:py-4 lg:px-14 lg:py-5',
+          hideOnHomeHero ? 'opacity-0 pointer-events-none -translate-y-full' : 'opacity-100 pointer-events-auto translate-y-0',
           scrolled
             ? 'bg-background/85 backdrop-blur-md shadow-lg shadow-black/20'
             : 'bg-transparent'
