@@ -10,7 +10,7 @@ const locations = [
   {
     city: 'Lucknow',
     image:
-      'https://images.unsplash.com/photo-1599661046827-dacde697654f?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80',
   },
   {
     city: 'Patna',

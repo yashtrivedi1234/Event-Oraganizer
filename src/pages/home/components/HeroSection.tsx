@@ -95,6 +95,7 @@ export const HeroSection: React.FC = () => {
           }}
           onMouseEnter={() => setHoveredSide('corporate')}
           onMouseLeave={() => setHoveredSide(null)}
+          onClick={() => navigate('/portfolio')}
           className="group absolute inset-0 z-20 h-1/2 cursor-pointer overflow-hidden border-b border-white/5 md:h-full md:w-full md:border-b-0"
         >
           <motion.div
@@ -117,7 +118,6 @@ export const HeroSection: React.FC = () => {
               <motion.button
                 className="group/btn flex items-center space-x-4 text-white"
                 whileHover={{ x: 10 }}
-                onClick={() => navigate('/portfolio')}
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-300 group-hover/btn:border-accent group-hover/btn:bg-accent md:h-12 md:w-12">
                   <ArrowRight size={18} className="transition-colors group-hover/btn:text-black" />
@@ -137,6 +137,7 @@ export const HeroSection: React.FC = () => {
           }}
           onMouseEnter={() => setHoveredSide('private')}
           onMouseLeave={() => setHoveredSide(null)}
+          onClick={() => navigate('/portfolio')}
           className="group absolute inset-0 z-10 h-1/2 cursor-pointer overflow-hidden md:h-full md:w-full"
         >
           <motion.div
@@ -159,7 +160,6 @@ export const HeroSection: React.FC = () => {
               <motion.button
                 className="group/btn flex items-center space-x-4 text-white md:flex-row-reverse md:space-x-reverse"
                 whileHover={{ x: typeof window !== 'undefined' && window.innerWidth >= 768 ? -10 : 10 }}
-                onClick={() => navigate('/portfolio')}
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 transition-all duration-500 group-hover/btn:border-accent group-hover/btn:bg-accent md:h-12 md:w-12">
                   <ArrowRight size={18} className="transition-colors group-hover/btn:text-black" />
