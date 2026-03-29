@@ -31,7 +31,6 @@ const GrowWithUsSection: React.FC = () => {
       <div className="mx-auto max-w-7xl">
 
         <div className="mb-6 text-center">
-          {/* h2 global base style: Montserrat, uppercase, 700 weight */}
           <h2 className="text-white">
             Grow With Us
           </h2>
@@ -44,22 +43,32 @@ const GrowWithUsSection: React.FC = () => {
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 18 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.35 }}
-                transition={{ duration: 0.35, delay: index * 0.06 }}
-                className="flex flex-col items-center text-center"
+                transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
+                whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                className="flex flex-col items-center text-center cursor-default"
               >
-                <div className="mb-4 flex h-20 w-20 items-center justify-center text-accent drop-shadow-[0_0_10px_rgba(136,171,50,0.45)] md:h-24 md:w-24">
+                <motion.div
+                  animate={{
+                    y: [0, -4, 0],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: index * 0.4,
+                    ease: 'easeInOut',
+                  }}
+                  className="mb-4 flex h-20 w-20 items-center justify-center text-accent drop-shadow-[0_0_10px_rgba(136,171,50,0.45)] md:h-24 md:w-24"
+                >
                   <Icon size={56} strokeWidth={1.5} className="md:h-[68px] md:w-[68px]" />
-                </div>
+                </motion.div>
 
-                {/* h3 global base style: Montserrat, uppercase, 600 weight */}
                 <h3 className="mb-3 text-white">
                   {item.title}
                 </h3>
 
-                {/* p global base style: Inter, 1.7 line-height — color override for white */}
                 <p className="max-w-[260px] text-sm text-white/90 md:text-base">
                   {item.description}
                 </p>

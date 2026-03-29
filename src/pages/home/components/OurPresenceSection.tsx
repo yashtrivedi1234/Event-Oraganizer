@@ -22,86 +22,26 @@ import ludhianaImage from '../../../assets/city/imgi_64_19.png';
 import indoreImage from '../../../assets/city/imgi_65_20.png';
 
 const locations = [
-  {
-    city: 'New Delhi',
-    image: newDelhiImage,
-  },
-  {
-    city: 'Lucknow',
-    image: lucknowImage,
-  },
-  {
-    city: 'Patna',
-    image: patnaImage,
-  },
-  {
-    city: 'Ranchi',
-    image: ranchiImage,
-  },
-  {
-    city: 'Kolkata',
-    image: kolkataImage,
-  },
-  {
-    city: 'Bhubaneswar',
-    image: bhubaneswarImage,
-  },
-  {
-    city: 'Jaipur',
-    image: jaipurImage,
-  },
-  {
-    city: 'Vadodara',
-    image: vadodaraImage,
-  },
-  {
-    city: 'Mumbai',
-    image: mumbaiImage,
-  },
-  {
-    city: 'Visakhapatnam',
-    image: visakhapatnamImage,
-  },
-  {
-    city: 'Hyderabad',
-    image: hyderabadImage,
-  },
-  {
-    city: 'Bangalore',
-    image: bangaloreImage,
-  },
-  {
-    city: 'Chennai',
-    image: chennaiImage,
-  },
-  {
-    city: 'Goa',
-    image: goaImage,
-  },
-  {
-    city: 'Chandigarh',
-    image: chandigarhImage,
-  },
-  {
-    city: 'Noida',
-    image: noidaImage,
-  },
-  {
-    city: 'Gurugram',
-    image: gurugramImage,
-  },
-  {
-    city: 'Ludhiana',
-    image: ludhianaImage,
-  },
-  {
-    city: 'Indore',
-    image: indoreImage,
-  },
-  {
-    city: 'Raipur',
-    image: raipurImage,
-  },
+  { city: 'New Delhi', image: newDelhiImage },
+  { city: 'Lucknow', image: lucknowImage },
+  { city: 'Patna', image: patnaImage },
+  { city: 'Ranchi', image: ranchiImage },
+  { city: 'Kolkata', image: kolkataImage },
+  { city: 'Bhubaneswar', image: bhubaneswarImage },
+  { city: 'Jaipur', image: jaipurImage },
+  { city: 'Vadodara', image: vadodaraImage },
+  { city: 'Mumbai', image: mumbaiImage },
+  { city: 'Visakhapatnam', image: visakhapatnamImage },
+  { city: 'Hyderabad', image: hyderabadImage },
+  { city: 'Bangalore', image: bangaloreImage },
+  { city: 'Chennai', image: chennaiImage },
+  { city: 'Goa', image: goaImage },
+  { city: 'Chandigarh', image: chandigarhImage },
+  { city: 'Noida', image: noidaImage },
+  { city: 'Gurugram', image: gurugramImage },
+  { city: 'Ludhiana', image: ludhianaImage },
+  { city: 'Indore', image: indoreImage },
+  { city: 'Raipur', image: raipurImage },
 ];
 
 const OurPresenceSection: React.FC = () => {
@@ -109,12 +49,8 @@ const OurPresenceSection: React.FC = () => {
     <section className="section-padding bg-black px-4 text-white md:px-8" data-scroll-section>
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-6 text-center">
-          <h2 className="text-white">
-            Our Presence
-          </h2>
-          <p className="mt-2 text-white/80">
-            Experience the Power of Smart Products
-          </p>
+          <h2 className="text-white">Our Presence</h2>
+          <p className="mt-2 text-white/80">Experience the Power of Smart Products</p>
         </div>
 
         <div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">
@@ -124,8 +60,9 @@ const OurPresenceSection: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.35, delay: index * 0.02 }}
-              className="group mx-auto w-full max-w-[120px] text-center sm:max-w-[130px] lg:max-w-[140px]"
+              transition={{ duration: 0.45, delay: index * 0.04, ease: 'easeOut' }}
+              whileHover={{ scale: 1.05, y: -8, transition: { duration: 0.25 } }}
+              className="group mx-auto w-full max-w-[120px] text-center sm:max-w-[130px] lg:max-w-[140px] cursor-default"
             >
               <div
                 className="relative overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04] transition-all duration-500

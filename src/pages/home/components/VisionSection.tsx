@@ -40,17 +40,27 @@ const VisionSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          {/* section-label global utility: accent color, uppercase, tracking, small size */}
           <span className="section-label">Our Philosophy</span>
 
-          {/* h2 global base style handles: Montserrat, uppercase, 700 weight, clamp size */}
-          {/* outline-text global utility: transparent fill with accent stroke */}
-          <h2 className="mb-2">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="mb-2"
+          >
             WE DON'T JUST PLAN EVENTS. <br />
-            <span className="outline-text">WE DESIGN LEGACIES.</span>
-          </h2>
+            <motion.span
+              className="outline-text"
+              initial={{ opacity: 0, letterSpacing: '0.3em' }}
+              whileInView={{ opacity: 1, letterSpacing: '0.1em' }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, delay: 0.5, ease: 'easeOut' }}
+            >
+              WE DESIGN LEGACIES.
+            </motion.span>
+          </motion.h2>
 
-          {/* p global base style: Inter, 1.7 line-height, muted color */}
           <p className="mx-auto font-light">
             At Bamboo Groves, we believe every celebration is an opportunity to tell a story that
             resonates across generations. Our approach blends architectural precision with cinematic
