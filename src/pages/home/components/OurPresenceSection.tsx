@@ -108,7 +108,6 @@ const OurPresenceSection: React.FC = () => {
   return (
     <section className="section-padding bg-black px-4 text-white md:px-8" data-scroll-section>
       <div className="mx-auto max-w-[1280px]">
-
         <div className="mb-6 text-center">
           <h2 className="text-white">
             Our Presence
@@ -126,7 +125,6 @@ const OurPresenceSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.35, delay: index * 0.02 }}
-              // ↓ max-w reduced: 120px / 130px / 140px (was 150/160/172px)
               className="group mx-auto w-full max-w-[120px] text-center sm:max-w-[130px] lg:max-w-[140px]"
             >
               <div
@@ -139,24 +137,6 @@ const OurPresenceSection: React.FC = () => {
                   after:opacity-80 after:transition-opacity after:duration-500
                   group-hover:-translate-y-2 group-hover:border-white/20
                   group-hover:before:opacity-100 group-hover:after:opacity-100"
-                // ↓ drop-shadow added via style for precise control
-                style={{
-                  filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.7)) drop-shadow(0 2px 8px rgba(0,0,0,0.5))',
-                  boxShadow: '0 18px 40px rgba(0,0,0,0.55), 0 6px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)',
-                  transition: 'filter 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease, border-color 0.5s ease',
-                }}
-                onMouseEnter={e => {
-                  (e.currentTarget as HTMLElement).style.filter =
-                    'drop-shadow(0 16px 36px rgba(0,0,0,0.85)) drop-shadow(0 4px 12px rgba(0,0,0,0.65))';
-                  (e.currentTarget as HTMLElement).style.boxShadow =
-                    '0 28px 60px rgba(0,0,0,0.7), 0 12px 28px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.18)';
-                }}
-                onMouseLeave={e => {
-                  (e.currentTarget as HTMLElement).style.filter =
-                    'drop-shadow(0 8px 24px rgba(0,0,0,0.7)) drop-shadow(0 2px 8px rgba(0,0,0,0.5))';
-                  (e.currentTarget as HTMLElement).style.boxShadow =
-                    '0 18px 40px rgba(0,0,0,0.55), 0 6px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)';
-                }}
               >
                 <img
                   src={location.image}
