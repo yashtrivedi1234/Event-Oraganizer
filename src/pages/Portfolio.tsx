@@ -148,8 +148,8 @@ const Portfolio: React.FC = () => {
         }
       `}</style>
 
-      <div className="bg-transparent px-4 pb-28 pt-28 md:px-8">
-        <div className="mx-auto max-w-xl">
+      <div className="bg-transparent px-4 pb-28 pt-28 md:px-8 xl:px-10">
+        <div className="mx-auto max-w-xl xl:max-w-[1600px]">
           {/* Page Header */}
           <header className="mb-10">
             <motion.p
@@ -191,7 +191,10 @@ const Portfolio: React.FC = () => {
           </header>
 
           {/* Cards */}
-          <motion.div layout className="flex flex-col gap-6">
+          <motion.div
+            layout
+            className="flex flex-col gap-6 xl:grid xl:grid-cols-3 xl:gap-6"
+          >
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project, i) => {
                 const qrUrl = `${import.meta.env.VITE_APP_URL}/portfolio?project=${project.id}`;
