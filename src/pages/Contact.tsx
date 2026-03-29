@@ -11,12 +11,12 @@ const Contact: React.FC = () => {
           {/* Info */}
           <div>
             {/* h1 global base style: Montserrat, uppercase, 800 weight, clamp size */}
-            <h1 className="mb-12">
-              Start Your <br /> <span className="text-accent">Event.</span>
+            <h1 className="mb-2">
+              Start Your <span className="text-accent">Event.</span>
             </h1>
 
             {/* p global base style: Inter, 1.7 line-height, muted color */}
-            <p className="mb-12 max-w-md">
+            <p className="mb-6 max-w-md">
               Ready to create something extraordinary? Tell us about your event and let's start the planning process.
             </p>
 
@@ -54,9 +54,9 @@ const Contact: React.FC = () => {
             className="bg-white/5 p-12 rounded-3xl border border-white/10 backdrop-blur-md"
             style={{ transformStyle: 'preserve-3d' }}
           >
-            <form className="space-y-8" style={{ transform: 'translateZ(20px)' }}>
+            <form className="space-y-5" style={{ transform: 'translateZ(20px)' }}>
               <div className="space-y-2">
-                <label className="section-label mb-0">Full Name</label>
+                <label className="section-label">Full Name</label>
                 <input
                   type="text"
                   placeholder="John Doe"
