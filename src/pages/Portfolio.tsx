@@ -17,7 +17,7 @@ const projects = [
   {
     id: 2,
     title: "Midnight Soiree",
-    category: "Private",
+    category: "Social",
     desc: "An exclusive private birthday celebration in a hidden rooftop venue.",
     year: "2024",
     guests: "80",
@@ -66,7 +66,7 @@ const Portfolio: React.FC = () => {
         <h1 className="mb-6 text-white">Productions</h1>
 
         <div className=" flex gap-3">
-          {["All", "Corporate", "Private"].map((cat) => (
+          {["All", "Corporate", "Social"].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
