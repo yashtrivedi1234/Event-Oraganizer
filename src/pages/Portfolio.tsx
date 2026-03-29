@@ -63,7 +63,7 @@ const Portfolio: React.FC = () => {
   return (
     <>
       <div className="mx-auto max-w-7xl px-6 py-24 mt-6">
-        <h1 className="mb-6 text-4xl text-white">Productions</h1>
+        <h1 className="mb-6 text-white">Productions</h1>
 
         <div className=" flex gap-3">
           {["All", "Corporate", "Private"].map((cat) => (
