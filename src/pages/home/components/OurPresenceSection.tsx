@@ -1,106 +1,106 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import newDelhiImage from '../../../assets/city/imgi_46_1.png';
+import lucknowImage from '../../../assets/city/imgi_47_2.png';
+import patnaImage from '../../../assets/city/imgi_48_3.png';
+import ranchiImage from '../../../assets/city/imgi_49_4.png';
+import kolkataImage from '../../../assets/city/imgi_50_5.png';
+import bhubaneswarImage from '../../../assets/city/imgi_51_6.png';
+import jaipurImage from '../../../assets/city/imgi_52_7.png';
+import vadodaraImage from '../../../assets/city/imgi_53_8.png';
+import mumbaiImage from '../../../assets/city/imgi_54_9.png';
+import visakhapatnamImage from '../../../assets/city/imgi_55_10.png';
+import hyderabadImage from '../../../assets/city/imgi_56_11.png';
+import bangaloreImage from '../../../assets/city/imgi_57_12.png';
+import chennaiImage from '../../../assets/city/imgi_58_13.png';
+import goaImage from '../../../assets/city/imgi_59_14.png';
+import raipurImage from '../../../assets/city/imgi_60_15.png';
+import chandigarhImage from '../../../assets/city/imgi_61_16.png';
+import noidaImage from '../../../assets/city/imgi_62_17.png';
+import gurugramImage from '../../../assets/city/imgi_63_18.png';
+import ludhianaImage from '../../../assets/city/imgi_64_19.png';
+import indoreImage from '../../../assets/city/imgi_65_20.png';
 
 const locations = [
   {
     city: 'New Delhi',
-    image:
-      'https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80',
+    image: newDelhiImage,
   },
   {
     city: 'Lucknow',
-    image:
-      'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80',
+    image: lucknowImage,
   },
   {
     city: 'Patna',
-    image:
-      'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=800&q=80',
+    image: patnaImage,
   },
   {
     city: 'Ranchi',
-    image:
-      'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?auto=format&fit=crop&w=800&q=80',
+    image: ranchiImage,
   },
   {
     city: 'Kolkata',
-    image:
-      'https://images.unsplash.com/photo-1558431382-27e303142255?auto=format&fit=crop&w=800&q=80',
+    image: kolkataImage,
   },
   {
     city: 'Bhubaneswar',
-    image:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80',
+    image: bhubaneswarImage,
   },
   {
     city: 'Jaipur',
-    image:
-      'https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=800&q=80',
+    image: jaipurImage,
   },
   {
     city: 'Vadodara',
-    image:
-      'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=800&q=80',
+    image: vadodaraImage,
   },
   {
     city: 'Mumbai',
-    image:
-      'https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?auto=format&fit=crop&w=800&q=80',
+    image: mumbaiImage,
   },
   {
     city: 'Visakhapatnam',
-    image:
-      'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80',
+    image: visakhapatnamImage,
   },
   {
     city: 'Hyderabad',
-    image:
-      'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=800&q=80',
+    image: hyderabadImage,
   },
   {
     city: 'Bangalore',
-    image:
-      'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=800&q=80',
+    image: bangaloreImage,
   },
   {
     city: 'Chennai',
-    image:
-      'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80',
+    image: chennaiImage,
   },
   {
     city: 'Goa',
-    image:
-      'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80',
+    image: goaImage,
   },
   {
     city: 'Chandigarh',
-    image:
-      'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
+    image: chandigarhImage,
   },
   {
     city: 'Noida',
-    image:
-      'https://images.unsplash.com/photo-1514565131-fce0801e5785?auto=format&fit=crop&w=800&q=80',
+    image: noidaImage,
   },
   {
     city: 'Gurugram',
-    image:
-      'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=800&q=80',
+    image: gurugramImage,
   },
   {
     city: 'Ludhiana',
-    image:
-      'https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=800&q=80',
+    image: ludhianaImage,
   },
   {
     city: 'Indore',
-    image:
-      'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80',
+    image: indoreImage,
   },
   {
     city: 'Raipur',
-    image:
-      'https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=800&q=80',
+    image: raipurImage,
   },
 ];
 
