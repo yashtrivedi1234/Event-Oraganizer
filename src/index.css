@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 /* =========================
@@ -228,6 +228,37 @@ html.has-scroll-dragging {
     background: linear-gradient(145deg, rgb(255 255 255 / 0.98), rgb(255 255 255 / 0.92));
   }
 
+  .pf-card-title {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    letter-spacing: 0.06em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .qr-glow {
+    transition: all 0.4s ease;
+  }
+
+  .qr-glow:hover {
+    box-shadow:
+      0 0 25px rgb(136 171 50 / 0.4),
+      0 0 60px rgb(136 171 50 / 0.2);
+    transform: scale(1.03);
+  }
+
+  .pf-qr-logo {
+    border-radius: 0.75rem;
+    background: #fff;
+    padding: 0.5rem;
+    box-shadow: 0 10px 24px rgb(0 0 0 / 0.18);
+  }
+
+  .pf-scan-line {
+    background: linear-gradient(90deg, transparent, #88ab32, transparent);
+    animation: pf-scan 2.5s linear infinite;
+  }
+
   /* Effects */
   .outline-text {
     -webkit-text-stroke: 1px var(--color-accent);
@@ -240,5 +271,25 @@ html.has-scroll-dragging {
 
   .perspective-2000 {
     perspective: 2000px;
+  }
+}
+
+@keyframes pf-scan {
+  0% {
+    top: 10px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    top: calc(100% - 10px);
+    opacity: 0;
   }
 }
