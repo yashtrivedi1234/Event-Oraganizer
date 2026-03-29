@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import ContactModal from '../components/ContactModal';
 
 const projects = [
   { id: 1, title: 'The Crystal Gala', category: 'Corporate', img: 'https://picsum.photos/seed/gala1/800/600', desc: 'A high-end corporate gala for 500+ guests with immersive lighting.' },
-  { id: 2, title: 'Midnight Soirée', category: 'Private', img: 'https://picsum.photos/seed/party1/800/600', desc: 'An exclusive private birthday celebration in a hidden rooftop venue.' },
+  { id: 2, title: 'Midnight Soiree', category: 'Private', img: 'https://picsum.photos/seed/party1/800/600', desc: 'An exclusive private birthday celebration in a hidden rooftop venue.' },
   { id: 3, title: 'Nexus Tech Launch', category: 'Corporate', img: 'https://picsum.photos/seed/launch1/800/600', desc: 'A futuristic product launch featuring holographic displays.' },
   { id: 4, title: 'Summer Solstice', category: 'Private', img: 'https://picsum.photos/seed/party2/800/600', desc: 'A bohemian-chic outdoor wedding with custom floral installations.' },
   { id: 5, title: 'Global Summit 2025', category: 'Corporate', img: 'https://picsum.photos/seed/summit1/800/600', desc: 'A three-day international conference with complex multi-track logistics.' },
@@ -21,7 +21,7 @@ const Portfolio: React.FC = () => {
     const projectId = params.get('project');
 
     if (projectId) {
-      const project = projects.find(p => p.id === parseInt(projectId));
+      const project = projects.find((p) => p.id === parseInt(projectId, 10));
       if (project) {
         setSelectedProject(project);
         setModalOpen(true);
@@ -32,14 +32,12 @@ const Portfolio: React.FC = () => {
 
   const filteredProjects = filter === 'All'
     ? projects
-    : projects.filter(p => p.category === filter);
+    : projects.filter((p) => p.category === filter);
 
   return (
-    <div className="pt-32 pb-20 px-6 md:px-12 bg-transparent">
-      <div className="max-w-7xl mx-auto">
-
+    <div className="bg-transparent px-6 pb-20 pt-32 md:px-12">
+      <div className="mx-auto max-w-7xl">
         <header className="mb-20">
-          {/* h1 global base style: Montserrat, uppercase, 800 weight, clamp size */}
           <h1 className="mb-8">Productions</h1>
 
           <div className="flex flex-wrap gap-4">
@@ -47,7 +45,7 @@ const Portfolio: React.FC = () => {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`heading px-8 py-3 rounded-full text-sm font-bold transition-all ${
+                className={`heading rounded-full px-8 py-3 text-sm font-bold transition-all ${
                   filter === cat ? 'bg-accent text-white' : 'bg-white/5 text-white hover:bg-white/10'
                 }`}
               >
@@ -59,7 +57,7 @@ const Portfolio: React.FC = () => {
 
         <motion.div
           layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 perspective-2000"
+          className="grid grid-cols-1 gap-8 perspective-2000 md:grid-cols-2 lg:grid-cols-3"
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, i) => (
@@ -77,39 +75,42 @@ const Portfolio: React.FC = () => {
                   boxShadow: '0 25px 50px rgba(0,0,0,0.5)',
                 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                onClick={() => {
-                  setSelectedProject(project);
-                  setModalOpen(true);
-                }}
-                className="group cursor-pointer rounded-2xl overflow-hidden"
+                className="group overflow-hidden rounded-[1.75rem] border border-white/8 bg-white/[0.03]"
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                <div className="aspect-[4/3] overflow-hidden mb-6 relative" style={{ transformStyle: 'preserve-3d' }}>
+                <div className="relative aspect-[4/3] overflow-hidden" style={{ transformStyle: 'preserve-3d' }}>
                   <motion.img
                     src={project.img}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                     style={{ transform: 'translateZ(20px)' }}
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-8 gap-6">
-                    <div className="w-32 h-32 bg-white p-2 rounded-lg">
-                      <img
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=120&data=${encodeURIComponent(import.meta.env.VITE_APP_URL + `/portfolio?project=${project.id}`)}`}
-                        alt="QR Code"
-                        className="w-full h-full"
-                      />
-                    </div>
-                    {/* section-label: uppercase, tracking, accent color — mb-0 override */}
-                    <span className="section-label mb-0 text-white">Scan to Connect</span>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 </div>
 
-                <div className="px-2 pb-4" style={{ transform: 'translateZ(30px)' }}>
-                  {/* section-label: accent color, uppercase, tracking */}
-                  <span className="section-label">{project.category}</span>
-                  {/* h3 global base style: Montserrat, uppercase, 600 weight */}
-                  <h3>{project.title}</h3>
+                <div className="grid gap-5 p-5" style={{ transform: 'translateZ(30px)' }}>
+                  <div>
+                    <span className="section-label">{project.category}</span>
+                    <h3>{project.title}</h3>
+                  </div>
+
+                  <div className="portfolio-qr-panel">
+                    <div className="portfolio-qr-copy">
+                      <span className="section-label mb-2">Instant Preview</span>
+                      <p className="heading text-[0.7rem] tracking-[0.28em] text-accent/90">
+                        Scan To Open
+                      </p>
+                    </div>
+
+                    <div className="portfolio-qr-frame shrink-0">
+                      <img
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=160&data=${encodeURIComponent(import.meta.env.VITE_APP_URL + `/portfolio?project=${project.id}`)}`}
+                        alt={`QR code for ${project.title}`}
+                        className="h-full w-full rounded-[1rem]"
+                      />
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
