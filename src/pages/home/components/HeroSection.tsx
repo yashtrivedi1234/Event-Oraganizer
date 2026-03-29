@@ -86,7 +86,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative h-screen w-full overflow-hidden bg-black"
+      className="relative isolate h-screen w-full max-w-full overflow-hidden bg-black [contain:layout_paint]"
       data-scroll-section
     >
       {/* Stars background */}
@@ -124,7 +124,7 @@ export const HeroSection: React.FC = () => {
           >
             {/* Background image */}
             <div
-              className="absolute inset-0 scale-110 bg-cover bg-center"
+              className="absolute inset-0 scale-105 bg-cover bg-center"
               style={{ backgroundImage: `url('${slide.image}')` }}
             />
             {/* Overlay */}
@@ -165,7 +165,7 @@ export const HeroSection: React.FC = () => {
         >
           <motion.div
             style={{ y: backgroundY }}
-            className="absolute inset-0 scale-110 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-125"
+            className="absolute inset-0 scale-105 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-black/60 transition-colors duration-500 group-hover:bg-black/30" />
 
@@ -193,7 +193,7 @@ export const HeroSection: React.FC = () => {
         >
           <motion.div
             style={{ y: backgroundY }}
-            className="absolute inset-0 scale-110 bg-[url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-125"
+            className="absolute inset-0 scale-105 bg-[url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-black/60 transition-colors duration-500 group-hover:bg-black/30" />
 
