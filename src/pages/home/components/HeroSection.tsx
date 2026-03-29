@@ -31,8 +31,24 @@ const Stars = (props: any) => {
   );
 };
 
+const carouselSlides = [
+  {
+    image:
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop',
+    title: 'Corporate',
+    subtitle: 'Events',
+  },
+  {
+    image:
+      'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop',
+    title: 'Social',
+    subtitle: 'Events',
+  },
+];
+
 export const HeroSection: React.FC = () => {
   const [hoveredSide, setHoveredSide] = useState<'corporate' | 'private' | null>(null);
+  const [carouselIndex, setCarouselIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
@@ -50,6 +66,14 @@ export const HeroSection: React.FC = () => {
     else splitPos.set(50);
   }, [hoveredSide, splitPos]);
 
+  // Auto-rotate carousel on mobile
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCarouselIndex((prev) => (prev + 1) % carouselSlides.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   const leftClipPath = useTransform(
     splitPos,
     (val) => `polygon(0 0, ${val + 10}% 0, ${val - 10}% 100%, 0 100%)`
@@ -65,6 +89,7 @@ export const HeroSection: React.FC = () => {
       className="relative h-screen w-full overflow-hidden bg-black"
       data-scroll-section
     >
+      {/* Stars background */}
       <div className="absolute inset-0 z-0">
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Suspense fallback={null}>
@@ -73,6 +98,7 @@ export const HeroSection: React.FC = () => {
         </Canvas>
       </div>
 
+      {/* Logo / Title */}
       <div className="absolute left-1/2 top-8 z-50 flex -translate-x-1/2 flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -85,15 +111,57 @@ export const HeroSection: React.FC = () => {
         </motion.div>
       </div>
 
-      <div className="relative z-10 flex h-full w-full flex-col md:block">
+      {/* ── MOBILE CAROUSEL (hidden on md+) ── */}
+      <div className="relative z-10 h-full w-full md:hidden">
+        {carouselSlides.map((slide, i) => (
+          <motion.div
+            key={i}
+            className="absolute inset-0 cursor-pointer"
+            animate={{ opacity: i === carouselIndex ? 1 : 0 }}
+            transition={{ duration: 0.8, ease: 'easeInOut' }}
+            style={{ opacity: i === 0 ? 1 : 0 }}
+            onClick={() => navigate('/portfolio')}
+          >
+            {/* Background image */}
+            <div
+              className="absolute inset-0 scale-110 bg-cover bg-center"
+              style={{ backgroundImage: `url('${slide.image}')` }}
+            />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/55" />
+
+            {/* Text */}
+            <div className="relative z-10 flex h-full flex-col items-center justify-center text-center p-8">
+              <h2 className="text-white">
+                {slide.title} <br />
+                <span className="italic text-accent">{slide.subtitle}</span>
+              </h2>
+            </div>
+          </motion.div>
+        ))}
+
+        {/* Dot indicators — no arrows */}
+        <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2">
+          {carouselSlides.map((_, i) => (
+            <div
+              key={i}
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                i === carouselIndex ? 'w-6 bg-white' : 'w-1.5 bg-white/40'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* ── DESKTOP SPLIT (hidden below md) ── */}
+      <div className="relative z-10 hidden h-full w-full md:block">
+        {/* Corporate / Left */}
         <motion.div
-          style={{
-            clipPath: typeof window !== 'undefined' && window.innerWidth >= 768 ? leftClipPath : 'none',
-          }}
+          style={{ clipPath: leftClipPath }}
           onMouseEnter={() => setHoveredSide('corporate')}
           onMouseLeave={() => setHoveredSide(null)}
           onClick={() => navigate('/portfolio')}
-          className="group absolute inset-0 z-20 h-1/2 cursor-pointer overflow-hidden border-b border-white/5 md:h-full md:w-full md:border-b-0"
+          className="group absolute inset-0 z-20 cursor-pointer overflow-hidden"
         >
           <motion.div
             style={{ y: backgroundY }}
@@ -115,15 +183,13 @@ export const HeroSection: React.FC = () => {
           </div>
         </motion.div>
 
+        {/* Social / Right */}
         <motion.div
-          style={{
-            clipPath: typeof window !== 'undefined' && window.innerWidth >= 768 ? rightClipPath : 'none',
-            top: typeof window !== 'undefined' && window.innerWidth < 768 ? '50%' : '0',
-          }}
+          style={{ clipPath: rightClipPath }}
           onMouseEnter={() => setHoveredSide('private')}
           onMouseLeave={() => setHoveredSide(null)}
           onClick={() => navigate('/portfolio')}
-          className="group absolute inset-0 z-10 h-1/2 cursor-pointer overflow-hidden md:h-full md:w-full"
+          className="group absolute inset-0 z-10 cursor-pointer overflow-hidden"
         >
           <motion.div
             style={{ y: backgroundY }}
@@ -146,6 +212,7 @@ export const HeroSection: React.FC = () => {
         </motion.div>
       </div>
 
+      {/* Coordinates — desktop only */}
       <div className="absolute left-12 top-12 z-50 hidden md:block">
         <div className="flex flex-col space-y-1">
           <span className="font-mono text-[8px] tracking-tighter text-white/20">LAT: 26.8467 N</span>
