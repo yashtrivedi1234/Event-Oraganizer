@@ -6,6 +6,8 @@ import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import logo from '../../../assets/logo.png';
+import corporateImage from '../../../assets/events/corporate.webp';
+import socialImage from '../../../assets/events/social.webp';
 
 const Stars = (props: any) => {
   const ref = useRef<any>(null);
@@ -35,14 +37,12 @@ const Stars = (props: any) => {
 
 const carouselSlides = [
   {
-    image:
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop',
+    image: corporateImage,
     title: 'Corporate',
     subtitle: 'Events',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop',
+    image: socialImage,
     title: 'Social',
     subtitle: 'Events',
   },
@@ -195,8 +195,8 @@ export const HeroSection: React.FC = () => {
           className="group absolute inset-0 z-20 cursor-pointer overflow-hidden"
         >
           <motion.div
-            style={{ y: backgroundY }}
-            className="absolute inset-0 scale-105 bg-[url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+            className="absolute inset-0 scale-105 bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+            style={{ y: backgroundY, backgroundImage: `url('${corporateImage}')` }}
           />
           <div className="absolute inset-0 bg-black/60 transition-colors duration-500 group-hover:bg-black/30" />
 
@@ -223,8 +223,8 @@ export const HeroSection: React.FC = () => {
           className="group absolute inset-0 z-10 cursor-pointer overflow-hidden"
         >
           <motion.div
-            style={{ y: backgroundY }}
-            className="absolute inset-0 scale-105 bg-[url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2074&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+            className="absolute inset-0 scale-105 bg-cover bg-center transition-transform duration-[1.5s] ease-out group-hover:scale-110"
+            style={{ y: backgroundY, backgroundImage: `url('${socialImage}')` }}
           />
           <div className="absolute inset-0 bg-black/60 transition-colors duration-500 group-hover:bg-black/30" />
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import aboutImage from '../../../assets/events/about.webp';
 
 const AboutUsSection: React.FC = () => {
   return (
@@ -14,7 +15,7 @@ const AboutUsSection: React.FC = () => {
         >
           {/* Background image */}
           <img
-            src="https://picsum.photos/seed/bamboo-event/1600/900"
+            src={aboutImage}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover object-center"
