@@ -158,7 +158,7 @@ export const HeroSection: React.FC = () => {
           </motion.div>
         ))}
 
-        <div className="absolute inset-x-0 top-1/2 z-20 flex -translate-y-1/2 items-center justify-between px-4">
+        <div className="absolute inset-x-0 bottom-20 z-20 flex items-center justify-between px-4">
           <button
             type="button"
             onClick={showPreviousSlide}
