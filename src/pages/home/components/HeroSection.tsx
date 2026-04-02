@@ -84,6 +84,7 @@ export const HeroSection: React.FC = () => {
     splitPos,
     (val) => `polygon(${val + 10}% 0, 100% 0, 100% 100%, ${val - 10}% 100%)`
   );
+
   const showPreviousSlide = () => {
     setCarouselIndex((prev) => (prev - 1 + carouselSlides.length) % carouselSlides.length);
   };
@@ -95,11 +96,15 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative isolate h-screen w-full max-w-full overflow-hidden bg-black [contain:layout_paint]"
+      // FIX 1: Use `overflow-hidden` without relying on [contain] alone.
+      // `contain: strict` blocks both layout AND paint leaks from scaled/clipped children.
+      className="relative isolate h-screen w-full overflow-hidden bg-black"
+      style={{ contain: 'strict' }}
       data-scroll-section
     >
       {/* Stars background */}
-      <div className="absolute inset-0 z-0">
+      {/* FIX 2: Explicitly constrain the Canvas wrapper so WebGL never bleeds out */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <Canvas camera={{ position: [0, 0, 1] }}>
           <Suspense fallback={null}>
             <Stars />
@@ -124,17 +129,18 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* ── MOBILE CAROUSEL (hidden on md+) ── */}
-      <div className="relative z-10 h-full w-full md:hidden">
+      {/* FIX 3: overflow-hidden here prevents scaled bg images from leaking horizontally */}
+      <div className="relative z-10 h-full w-full overflow-hidden md:hidden">
         {carouselSlides.map((slide, i) => (
           <motion.div
             key={i}
-            className="absolute inset-0 cursor-pointer"
+            className="absolute inset-0 cursor-pointer overflow-hidden"
             animate={{ opacity: i === carouselIndex ? 1 : 0 }}
             transition={{ duration: 0.8, ease: 'easeInOut' }}
             style={{ opacity: i === 0 ? 1 : 0 }}
             onClick={() => navigate('/portfolio')}
           >
-            {/* Background image */}
+            {/* Background image — scale is clipped by overflow-hidden on parent */}
             <div
               className="absolute inset-0 scale-105 bg-cover bg-center"
               style={{ backgroundImage: `url('${slide.image}')` }}
@@ -143,7 +149,7 @@ export const HeroSection: React.FC = () => {
             <div className="absolute inset-0 bg-black/55" />
 
             {/* Text */}
-            <div className="relative z-10 flex h-full flex-col items-center justify-center text-center p-8">
+            <div className="relative z-10 flex h-full flex-col items-center justify-center p-8 text-center">
               <h2 className="text-white">
                 {slide.title} <br />
                 <span className="italic text-accent">{slide.subtitle}</span>
@@ -185,13 +191,15 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* ── DESKTOP SPLIT (hidden below md) ── */}
-      <div className="relative z-10 hidden h-full w-full md:block">
+      {/* FIX 4: This wrapper clips both panels so clip-path edges never paint outside the section */}
+      <div className="relative z-10 hidden h-full w-full overflow-hidden md:block">
         {/* Corporate / Left */}
         <motion.div
           style={{ clipPath: leftClipPath }}
           onMouseEnter={() => setHoveredSide('corporate')}
           onMouseLeave={() => setHoveredSide(null)}
           onClick={() => navigate('/portfolio')}
+          // FIX 5: overflow-hidden on each panel clips the scale-110 bg image to the panel bounds
           className="group absolute inset-0 z-20 cursor-pointer overflow-hidden"
         >
           <motion.div
@@ -220,6 +228,7 @@ export const HeroSection: React.FC = () => {
           onMouseEnter={() => setHoveredSide('private')}
           onMouseLeave={() => setHoveredSide(null)}
           onClick={() => navigate('/portfolio')}
+          // FIX 5 (same): overflow-hidden clips the scaled bg image
           className="group absolute inset-0 z-10 cursor-pointer overflow-hidden"
         >
           <motion.div
@@ -263,4 +272,3 @@ export const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
-
