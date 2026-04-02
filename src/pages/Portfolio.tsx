@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import ContactModal from "../components/ContactModal";
 import CustomQR from "../components/CustomQR";
+import logo from "../assets/logo.png";
 
 const projects = [
   {
@@ -190,7 +191,7 @@ const Portfolio: React.FC = () => {
 
                     {/* QR wrapper */}
                     <div className="relative rounded-[20px] overflow-hidden bg-white p-3">
-                      <CustomQR url={qrUrl} logoText="CC" size={qrSize} />
+                      <CustomQR url={qrUrl} logoText="CC" logoSrc={logo} size={qrSize} />
                     </div>
 
                     {/* Scan label */}

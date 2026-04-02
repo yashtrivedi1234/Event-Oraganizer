@@ -17,10 +17,16 @@ function isFinderZone(row: number, col: number, size: number) {
 interface Props {
   url: string;
   logoText?: string;
+  logoSrc?: string;
   size?: number;
 }
 
-export default function CustomQR({ url, logoText = "CC", size = 260 }: Props) {
+export default function CustomQR({
+  url,
+  logoText = "CC",
+  logoSrc,
+  size = 260,
+}: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -64,11 +70,24 @@ export default function CustomQR({ url, logoText = "CC", size = 260 }: Props) {
       // Unique gradient IDs per QR to avoid SVG ID conflicts when multiple are on the page
       const uid = Math.random().toString(36).slice(2, 7);
 
+      const logoInner = logoSrc
+        ? `
+          <image
+            href="${logoSrc}"
+            x="${cell * 0.7}"
+            y="${cell * 0.7}"
+            width="${logoSize - cell * 1.4}"
+            height="${logoSize - cell * 1.4}"
+            preserveAspectRatio="xMidYMid meet"
+          />`
+        : `
+          <rect x="${cell * 0.4}" y="${cell * 0.4}" width="${logoSize - cell * 0.8}" height="${logoSize - cell * 0.8}" rx="${cell * 0.6}" fill="${ACCENT}"/>
+          <text x="${logoSize / 2}" y="${logoSize * 0.67}" text-anchor="middle" font-size="${cell * 1.7}" fill="${BG}" font-weight="700" font-family="sans-serif">${logoText}</text>`;
+
       const logo = `
         <g transform="translate(${logoX},${logoY})">
           <rect width="${logoSize}" height="${logoSize}" rx="${cell * 0.8}" fill="${BG}"/>
-          <rect x="${cell * 0.4}" y="${cell * 0.4}" width="${logoSize - cell * 0.8}" height="${logoSize - cell * 0.8}" rx="${cell * 0.6}" fill="${ACCENT}"/>
-          <text x="${logoSize / 2}" y="${logoSize * 0.67}" text-anchor="middle" font-size="${cell * 1.7}" fill="${BG}" font-weight="700" font-family="sans-serif">${logoText}</text>
+          ${logoInner}
         </g>`;
 
       const svg = `
@@ -108,7 +127,7 @@ export default function CustomQR({ url, logoText = "CC", size = 260 }: Props) {
         containerRef.current.innerHTML = svg;
       }
     })();
-  }, [url, size, logoText]);
+  }, [url, size, logoText, logoSrc]);
 
   return <div ref={containerRef} className="w-full h-full" />;
 }
