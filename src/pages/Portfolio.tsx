@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import ContactModal from "../components/ContactModal";
-import ccLogo from "../assets/cc-logo.png";
+import CustomQR from "../components/CustomQR";
 
 const projects = [
   {
@@ -52,28 +52,34 @@ const Portfolio: React.FC = () => {
       if (project) {
         setSelectedProject(project);
         setModalOpen(true);
-        window.history.replaceState({}, document.title, window.location.pathname);
+        window.history.replaceState(
+          {},
+          document.title,
+          window.location.pathname
+        );
       }
     }
   }, []);
 
   const filteredProjects =
-    filter === "All" ? projects : projects.filter((p) => p.category === filter);
+    filter === "All"
+      ? projects
+      : projects.filter((p) => p.category === filter);
 
   return (
     <>
       <div className="mx-auto max-w-7xl px-6 py-24 mt-6">
         <h1 className="mb-6 text-white">Productions</h1>
 
-        <div className=" flex gap-3">
+        <div className="flex gap-3 mb-10">
           {["All", "Corporate", "Social"].map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`rounded-full px-4 py-2 text-sm ${
+              className={`rounded-full px-4 py-2 text-sm transition-colors duration-200 ${
                 filter === cat
                   ? "bg-[#88ab32] text-black"
-                  : "bg-white/10 text-white/60"
+                  : "bg-white/10 text-white/60 hover:bg-white/20"
               }`}
             >
               {cat}
@@ -81,10 +87,15 @@ const Portfolio: React.FC = () => {
           ))}
         </div>
 
-        <motion.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <motion.div
+          layout
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+        >
           <AnimatePresence>
             {filteredProjects.map((project) => {
-              const qrUrl = `${import.meta.env.VITE_APP_URL}/portfolio?project=${project.id}`;
+              const qrUrl = `${
+                import.meta.env.VITE_APP_URL
+              }/portfolio?project=${project.id}`;
 
               return (
                 <motion.div
@@ -95,33 +106,57 @@ const Portfolio: React.FC = () => {
                   exit={{ opacity: 0 }}
                   className="rounded-3xl bg-[#0c0c0e] p-6"
                 >
-                  <h2 className="pf-card-title">{project.title}</h2>
-                  <p className="mb-6 text-sm text-white/40">{project.desc}</p>
+                  {/* Card header */}
+                  <div className="mb-4">
+                    <span className="text-xs font-medium tracking-widest uppercase text-[#88ab32] mb-1 block">
+                      {project.category}
+                    </span>
+                    <h2 className="text-white text-xl font-semibold leading-tight">
+                      {project.title}
+                    </h2>
+                    <p className="mt-1 text-sm text-white/40">{project.desc}</p>
+                  </div>
 
+                  {/* Stats row */}
+                  <div className="flex gap-4 mb-5 text-xs text-white/30">
+                    <span>
+                      <span className="text-white/60 font-medium">
+                        {project.guests}
+                      </span>{" "}
+                      guests
+                    </span>
+                    <span>
+                      <span className="text-white/60 font-medium">
+                        {project.days}
+                      </span>{" "}
+                      {project.days === "1" ? "day" : "days"}
+                    </span>
+                    <span>
+                      <span className="text-white/60 font-medium">
+                        {project.vendors}
+                      </span>{" "}
+                      vendors
+                    </span>
+                  </div>
+
+                  {/* Custom QR Code */}
                   <motion.div
-                    whileHover={{ scale: 1.05, rotate: 0.5 }}
-                    transition={{ type: "spring", stiffness: 200 }}
-                    className="qr-glow"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ type: "spring", stiffness: 200, damping: 18 }}
+                    className="relative group"
                   >
-                    <div className="group relative w-full">
-                      <div className="absolute inset-0 rounded-[22px] bg-gradient-to-br from-[#88ab32] via-[#b8d56a] to-[#88ab32] p-[2px] opacity-70 transition duration-500 group-hover:opacity-100" />
+                    {/* Glow border */}
+                    <div className="absolute -inset-[1px] rounded-[22px] bg-gradient-to-br from-[#88ab32] via-[#b8d56a] to-[#88ab32] opacity-40 group-hover:opacity-80 transition-opacity duration-500 blur-[1px]" />
 
-                      <div className="relative aspect-square overflow-hidden rounded-[20px] bg-white/90 p-[14px] backdrop-blur-md">
-                        <img
-                          src={`https://quickchart.io/qr?text=${encodeURIComponent(qrUrl)}&size=400&dark=0c0c0e&light=ffffff`}
-                          alt={`QR code for ${project.title}`}
-                          className="h-full w-full rounded-[10px]"
-                        />
-
-                        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-                          <div className="pf-qr-logo">
-                            <img src={ccLogo} alt="" aria-hidden="true" className="h-8 w-8 object-contain" />
-                          </div>
-                        </div>
-
-                        <div className="pf-scan-line absolute left-4 right-4 h-[2px]" />
-                      </div>
+                    {/* QR wrapper */}
+                    <div className="relative rounded-[20px] overflow-hidden bg-white p-3">
+                      <CustomQR url={qrUrl} logoText="CC" size={300} />
                     </div>
+
+                    {/* Scan label */}
+                    <p className="mt-2 text-center text-[10px] tracking-[0.2em] uppercase text-white/20 group-hover:text-[#88ab32]/60 transition-colors duration-300">
+                      Scan to view
+                    </p>
                   </motion.div>
                 </motion.div>
               );
