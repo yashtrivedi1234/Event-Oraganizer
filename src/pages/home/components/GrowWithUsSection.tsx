@@ -5,23 +5,23 @@ import { Compass, GraduationCap, Network, BriefcaseBusiness } from 'lucide-react
 const items = [
   {
     icon: Compass,
-    title: 'Publishing',
-    description: 'Showcase your event story, brand moments, and signature productions with polished presentation.',
+    title: 'Creative Direction',
+    description: 'We shape the visual language, mood, and story of your event so every detail feels intentional.',
   },
   {
     icon: BriefcaseBusiness,
-    title: 'Career',
-    description: 'Work with a team that values precision, creativity, and unforgettable guest experiences.',
+    title: 'Brand Experiences',
+    description: 'From launches to corporate showcases, we build events that reflect your identity with polish and impact.',
   },
   {
     icon: Network,
-    title: 'Education',
-    description: 'Learn modern event strategy, creative direction, and production systems that scale beautifully.',
+    title: 'Production Network',
+    description: 'Trusted collaborators across venues, decor, hospitality, and technical execution keep every event running smoothly.',
   },
   {
     icon: GraduationCap,
-    title: 'Meeting',
-    description: 'Collaborate on corporate events, private celebrations, and destination experiences with ease.',
+    title: 'Private Celebrations',
+    description: 'Milestones, intimate gatherings, and large-format social occasions are crafted with warmth and sophistication.',
   },
 ];
 
@@ -31,8 +31,9 @@ const GrowWithUsSection: React.FC = () => {
       <div className="mx-auto max-w-7xl">
 
         <div className="mb-6 text-center">
+          <span className="section-label">What We Bring</span>
           <h2 className="text-white">
-            Grow With Us
+            More Than Planning
           </h2>
         </div>
 

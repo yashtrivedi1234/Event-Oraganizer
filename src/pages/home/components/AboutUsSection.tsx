@@ -1,17 +1,16 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
 
 const AboutUsSection: React.FC = () => {
   return (
-    <section className="section-padding bg-background px-6 md:px-12" data-scroll-section>
-      <div className="max-w-7xl mx-auto">
+    <section className="section-padding bg-background px-6 min-h-screen md:min-h-0 md:px-12" data-scroll-section>
+      <div className="mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl items-stretch md:min-h-0">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="relative overflow-hidden rounded-[28px] border border-white/10 bg-black shadow-[0_30px_120px_rgba(0,0,0,0.45)] min-h-[350px] md:min-h-[420px]"
+          className="relative w-full overflow-hidden rounded-[28px] border border-white/10 bg-black shadow-[0_30px_120px_rgba(0,0,0,0.45)] min-h-[calc(100vh-6rem)] md:min-h-[420px]"
         >
           {/* Background image */}
           <img

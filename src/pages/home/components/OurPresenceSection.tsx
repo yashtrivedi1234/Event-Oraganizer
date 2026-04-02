@@ -50,7 +50,9 @@ const OurPresenceSection: React.FC = () => {
       <div className="mx-auto max-w-[1280px]">
         <div className="mb-6 text-center">
           <h2 className="text-white">Our Presence</h2>
-          <p className="mt-2 text-white/80">Experience the Power of Smart Products</p>
+          <p className="mt-2 text-white/80">
+            Producing curated celebrations and premium event experiences across India.
+          </p>
         </div>
 
         <div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-3 lg:grid-cols-6">

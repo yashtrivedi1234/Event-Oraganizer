@@ -4,6 +4,8 @@ import { PointMaterial, Points } from '@react-three/drei';
 import * as random from 'maath/random/dist/maath-random.esm';
 import { motion, useScroll, useSpring, useTransform } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
+import logo from '../../../assets/logo.png';
 
 const Stars = (props: any) => {
   const ref = useRef<any>(null);
@@ -82,6 +84,13 @@ export const HeroSection: React.FC = () => {
     splitPos,
     (val) => `polygon(${val + 10}% 0, 100% 0, 100% 100%, ${val - 10}% 100%)`
   );
+  const showPreviousSlide = () => {
+    setCarouselIndex((prev) => (prev - 1 + carouselSlides.length) % carouselSlides.length);
+  };
+
+  const showNextSlide = () => {
+    setCarouselIndex((prev) => (prev + 1) % carouselSlides.length);
+  };
 
   return (
     <section
@@ -106,8 +115,11 @@ export const HeroSection: React.FC = () => {
           transition={{ duration: 0.5, ease: 'easeOut' }}
           className="text-center"
         >
-          <span className="section-label mb-1">Bamboo</span>
-          <h1 className="text-white">Groves</h1>
+          <img
+            src={logo}
+            alt="Bamboo Groves"
+            className="h-16 w-auto sm:h-20 md:h-24"
+          />
         </motion.div>
       </div>
 
@@ -140,7 +152,26 @@ export const HeroSection: React.FC = () => {
           </motion.div>
         ))}
 
-        {/* Dot indicators — no arrows */}
+        <div className="absolute inset-x-0 top-1/2 z-20 flex -translate-y-1/2 items-center justify-between px-4">
+          <button
+            type="button"
+            onClick={showPreviousSlide}
+            aria-label="Previous slide"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-transparent text-white transition-colors hover:border-white hover:bg-white/10"
+          >
+            <ArrowLeft size={20} />
+          </button>
+          <button
+            type="button"
+            onClick={showNextSlide}
+            aria-label="Next slide"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/40 bg-transparent text-white transition-colors hover:border-white hover:bg-white/10"
+          >
+            <ArrowRight size={20} />
+          </button>
+        </div>
+
+        {/* Dot indicators */}
         <div className="absolute bottom-10 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2">
           {carouselSlides.map((_, i) => (
             <div
@@ -232,3 +263,4 @@ export const HeroSection: React.FC = () => {
 };
 
 export default HeroSection;
+

@@ -48,9 +48,9 @@ const Home: React.FC = () => {
       </SectionReveal>
 
       {/* GrowWith — bottom se fade up */}
-      <SectionReveal direction="up" delay={0.05}>
+      {/* <SectionReveal direction="up" delay={0.05}>
         <GrowWithUsSection />
-      </SectionReveal>
+      </SectionReveal> */}
 
       {/* Features — left se slide in */}
       <SectionReveal direction="left">

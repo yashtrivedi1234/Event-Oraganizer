@@ -12,39 +12,39 @@ import {
 const features = [
   {
     icon: CalendarCheck2,
-    title: 'Smart Planning',
+    title: 'End-To-End Planning',
     description:
-      'Manage timelines, vendors, guest flow, and execution checkpoints with a streamlined planning process.',
+      'From concept boards to final run sheets, we map every milestone so your event moves with clarity and confidence.',
   },
   {
     icon: LampDesk,
-    title: 'Comfort & Convenience',
+    title: 'Guest Experience Design',
     description:
-      'Control ambiance, decor, hospitality, and entertainment details to shape a seamless guest experience.',
+      'Hospitality, ambience, entertainment, and flow are curated together to create a seamless experience for every guest.',
   },
   {
     icon: Sparkles,
-    title: 'Luxury Styling',
+    title: 'Signature Styling',
     description:
-      'Signature decor concepts, immersive staging, and curated aesthetics bring every celebration to life.',
+      'Luxury decor concepts, immersive staging, and refined visual direction give each celebration its own identity.',
   },
   {
     icon: Clock3,
-    title: 'Automation & Scheduling',
+    title: 'Precision Execution',
     description:
-      'Precise run sheets, coordinated transitions, and time-perfect execution keep every moment on track.',
+      'Detailed timelines, coordinated cues, and smooth transitions keep the entire production on schedule.',
   },
   {
     icon: ShieldCheck,
-    title: 'Enhanced Security',
+    title: 'On-Ground Coordination',
     description:
-      'Guest management, venue control, and on-ground coordination help keep every event safe and stress-free.',
+      'Venue operations, vendor alignment, and guest management are handled carefully so the day feels effortless.',
   },
   {
     icon: Smartphone,
-    title: 'Control Devices',
+    title: 'Real-Time Communication',
     description:
-      'Real-time communication and command-ready coordination keep your event team connected throughout.',
+      'Live coordination across teams keeps production, hospitality, and client communication aligned throughout the event.',
   },
 ];
 
@@ -53,7 +53,8 @@ const FeaturesSection: React.FC = () => {
     <section className="section-padding bg-black px-4 text-white md:px-8" data-scroll-section>
       <div className="mx-auto max-w-7xl">
         <div className="mb-6 text-center">
-          <h2 className="text-white">Event Planning Features</h2>
+          <span className="section-label">Why Clients Choose Bamboo Groves</span>
+          <h2 className="text-white">Luxury Events, Managed Beautifully</h2>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-20 md:gap-y-8">
