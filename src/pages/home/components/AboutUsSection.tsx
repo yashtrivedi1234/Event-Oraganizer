@@ -23,7 +23,7 @@ const AboutUsSection: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-black/70" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(136,171,50,0.24),transparent_32%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.08),transparent_28%)]" />
 
-          <div className="relative z-10 flex items-center justify-end p-4 md:p-6 h-full min-h-[inherit]">
+          <div className="relative z-10 flex h-full min-h-[inherit] items-end justify-end p-4 md:items-center md:p-6">
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
